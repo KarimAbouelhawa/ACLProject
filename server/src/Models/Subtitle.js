@@ -1,16 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const subTitleSchema = new Schema(
-    {
-        Name: {
-            type: String,
-            required: true,
-        },
-        Hours: {
-            type: Number,
-            required: true,
-        },
+const subTitleSchema = new Schema({
+    Name: {
+        type: String,
+        required: true,
+    },
+    Hours: {
+        type: Number,
+        required: true,
     },
     Hours: {
         type: Number,
