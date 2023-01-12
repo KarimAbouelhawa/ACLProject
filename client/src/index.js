@@ -1,5 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+
+import SignUp from "./SignUpIndividualTrainee"
+import PaymentPolicy from "./paymentPolicy"
+import WebsitePolicy from "./WebsitePolicy"
+import CompanyRefundPolicy from "./CompanyRefundPolicy"
 import "./Styles/index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 //import { BrowserRouter as Router, Route } from "react-router-dom";
