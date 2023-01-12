@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function App() {
-    const [formData, setFormData] = useState({ username: "", password: "" });
+    const [formData, setFormData] = useState({ Username: "", Password: "" });
     const [auth, setAuth] = useState("");
 
     function handleChange(e) {
@@ -12,14 +12,24 @@ function App() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const userData = await axios.post(
-            "http://localhost:4000/login",
-            formData
-        );
-        const authentication = await axios.get("http://localhost:4000/posts", {
-            headers: { Authorization: `BEARER ${userData.data.accessToken}` },
-        });
-        setAuth(authentication.data);
+        try {
+            const userData = await axios.post(
+                "http://localhost:8000/user/login",
+                formData
+            );
+            const authentication = await axios.get(
+                "http://localhost:8000/user/posts",
+                {
+                    headers: {
+                        Authorization: `BEARER ${userData.data.accessToken}`,
+                    },
+                }
+            );
+            console.log(authentication.data);
+            setAuth(authentication.data);
+        } catch (error) {
+            console.log("User Not found");
+        }
     }
 
     return (
@@ -28,14 +38,14 @@ function App() {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    name="username"
+                    name="Username"
                     placeholder="Username"
                     value={formData.username}
                     onChange={handleChange}
                 />
                 <input
                     type="password"
-                    name="password"
+                    name="Password"
                     placeholder="Password"
                     value={formData.password}
                     onChange={handleChange}
