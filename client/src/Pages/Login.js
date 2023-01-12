@@ -1,8 +1,10 @@
-import "./App.css";
+//import "./index.css";
 import React, { useState } from "react";
 import axios from "axios";
+import history from '../history'
+import { Link } from "react-router-dom";
 
-function App() {
+function Login() {
     const [formData, setFormData] = useState({ Username: "", Password: "" });
     const [auth, setAuth] = useState("");
 
@@ -50,7 +52,9 @@ function App() {
                     value={formData.password}
                     onChange={handleChange}
                 />
-                <button formAction="post">Login</button>
+                <Link to="./Login"><button>Login</button></Link>
+                <Link to="./GuestPage"><button>Continue as guest</button></Link>
+                <Link to="./SignUp"><button>Sign up</button></Link>
             </form>
 
             <h1>{auth}</h1>
@@ -58,4 +62,4 @@ function App() {
     );
 }
 
-export default App;
+export default Login;
