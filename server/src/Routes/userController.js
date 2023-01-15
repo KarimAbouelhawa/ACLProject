@@ -56,7 +56,7 @@ router.post("/login", async (req, res) => {
         const authUser = { name: user.Username, pass: user.Password };
 
         const accessToken = generateAccessToken(authUser);
-        res.json({ accessToken: accessToken });
+        res.json({ accessToken, ...user["_doc"] });
     } else {
         res.sendStatus(300);
     }

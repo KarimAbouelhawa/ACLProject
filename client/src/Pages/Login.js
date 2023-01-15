@@ -1,12 +1,13 @@
 //import "./index.css";
 import React, { useState } from "react";
 import axios from "axios";
-import history from '../history'
 import { Link, useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 function Login() {
     const [formData, setFormData] = useState({ Username: "", Password: "" });
     const [auth, setAuth] = useState("");
+    const [cookies, setCookie] = useCookies(["user"]);
     const navigate = useNavigate();
 
     function handleChange(e) {
@@ -32,9 +33,9 @@ function Login() {
                     },
                 }
             );
-            console.log(authentication.data);
+            setCookie("user", userData.data, { path: "/" });
             setAuth(authentication.data);
-            navigate("/IndividualTraineeHome")
+            navigate("/IndividualTraineeHome");
         } catch (error) {
             console.log("User Not found");
         }
@@ -69,12 +70,16 @@ function Login() {
                 </div> */}
                 {/* //<Link to="./Login"><button>Login</button> </Link> */}
                 <button formAction="post">Login</button>
-                <Link to="./GuestPage"><button>Continue as guest</button></Link>
-                <Link to="./SignUp"><button>Sign up</button></Link>
+                <Link to="./GuestPage">
+                    <button>Continue as guest</button>
+                </Link>
+                <Link to="./SignUp">
+                    <button>Sign up</button>
+                </Link>
             </form>
 
             <h1>{auth}</h1>
-        </div >
+        </div>
     );
 }
 
