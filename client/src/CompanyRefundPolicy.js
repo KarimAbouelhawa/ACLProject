@@ -8,7 +8,7 @@ function companyRefundPolicy() {
                 <p>
                 At KATAYA, we want all of our customers to be completely satisfied with their purchase. If for any reason you are not happy with your purchase, we will gladly issue a refund or exchange the item within 30 days of the purchase date.
 
-To request a refund or exchange, please contact us at KATAYA@KATAYA.com or call us on 1991. Please provide your name, order number, and the reason for the refund or exchange.
+To request a refund or exchange, please contact us at KATAYA@KATAYA.com or call us on 19991. Please provide your name, order number, and the reason for the refund or exchange.
 
 Refunds will be issued to the original form of payment. If you received the item as a gift and would like to exchange it for a different item, we will issue store credit.
 

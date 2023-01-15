@@ -59,9 +59,14 @@ function IndividualTraineeHome() {
                     size="40"
                 />
             </div>
-            <div className = "MiddlePanel">
-                <h1>Popular Courses: </h1>
-                {courses}
+            
+            <div id="middle">
+                <h1>All Courses: </h1>
+                <div className = "MiddlePanel">
+            
+                    {courses}
+                    
+                </div>
                 <h1>My Courses: </h1>
             </div>
         </div>

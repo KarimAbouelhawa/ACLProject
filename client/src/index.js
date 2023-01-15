@@ -18,5 +18,8 @@ root.render(<Router>
         <Route exact path="/" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/IndividualTraineeHome" element={<IndividualTraineeHome />} />
+        <Route path="/paymentPolicy" element={<PaymentPolicy />}/>
+        <Route path="/WebsitePolicy" element={<WebsitePolicy />}/>
+        <Route path="/CompanyRefundPolicy" element={<CompanyRefundPolicy />}/>
     </Routes>
 </Router>);

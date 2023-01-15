@@ -1,22 +1,44 @@
 import React, { useState } from "react";
-
+    
 function SignUpIndividualTrainee() {
 
+const [formData, setFormData] = React.useState({
+    firstName: "", lastName: "", email: "", password: "", username: "", country: "", gender: "", companyrefund: false, websitepolicy: false, paymentpolicy: false
+})
+
+console.log(formData)
+
+function handleChange(event){
+    const {name, value, type, checked} = event.target
+    setFormData(prevFormData => {
+        return {
+            ...prevFormData,
+            [name]: type === "checkbox" ? checked : value
+        }
+    })
+}
+function handleSubmit(event){
+    event.preventDeafult()
+}
     return (
         <div>
             <h1>Sign Up as an Individual Trainee</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
             <h5>First Name:</h5>
                 <input
                     type="text"
-                    name="firstname"
+                    name="firstName"
                     placeholder="firstname"
+                    onChange={handleChange}
+                    value={formData.firstName}
                 />
                 <h5>Last Name:</h5>
                 <input
                     type="text"
-                    name="lastname"
+                    name="lastName"
                     placeholder="lastname"
+                    onChange={handleChange}
+                    value={formData.lastName}
                 />
                 <h5>Gender:</h5>
                 <input
@@ -24,6 +46,8 @@ function SignUpIndividualTrainee() {
                     id= "male"
                     name="gender"
                     value= "Male"
+                    checked = {formData.gender === "Male"}
+                    onChange={handleChange}
                 />
                   <label for="male">Male</label><br></br>
                 <input
@@ -31,6 +55,8 @@ function SignUpIndividualTrainee() {
                     id= "female"
                     name="gender"
                     value= "Female"
+                    checked = {formData.gender === "Female"}
+                    onChange={handleChange}
                 />
                   <label for="female">Female</label><br></br>
 
@@ -41,21 +67,27 @@ function SignUpIndividualTrainee() {
                     type="text"
                     name="email"
                     placeholder="email"
+                    onChange={handleChange}
+                    value={formData.email}
                 />
                 <h5>Username:</h5>
                 <input
                     type="text"
                     name="username"
                     placeholder="username"
+                    onChange={handleChange}
+                    value={formData.username}
                 />
                 <h5>Password:</h5>
                 <input
                     type="password"
                     name="password"
                     placeholder="password"
+                    onChange={handleChange}
+                    value={formData.password}
                 />
                    <h5>Choose your Country:</h5>
- <select id="country" name="country">
+ <select id="country" name="country" onChange={handleChange} value={formData.country}>
     <option>select country</option>
     <option value="AF">Afghanistan</option>
     <option value="AX">Aland Islands</option>
@@ -309,33 +341,39 @@ function SignUpIndividualTrainee() {
     <option value="YE">Yemen</option>
     <option value="ZM">Zambia</option>
     <option value="ZW">Zimbabwe</option>
-</select>
-    <h4>Policy Agreements:</h4>
-    <input
-        type="checkbox"
-        name="websitepolicy"
-        placeholder="Website Policy"
-     />
-    <label for="websitepolicy">
-    <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">Website Policy</a>
-    </label><br></br>
-    <input
-        type="checkbox"
-        name="companyrefund"
-        placeholder="Company Refund"
-     />
-    <label for="companyrefund"> 
-    <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">Company Refund Policy</a>
-    </label><br></br>
+    </select>
+        <h4>Policy Agreements:</h4>
+                <input
+                    type="checkbox"
+                    name="websitepolicy"
+                    placeholder="Website Policy"
+                    checked={formData.websitepolicy}
+                    onChange={handleChange}
+                />
+                <label htmlFor="websitepolicy">
+                    <a href="./WebsitePolicy" target="_blank" rel="noopener noreferrer">Website Policy</a>
+                </label><br></br>
+                <input
+                    type="checkbox"
+                    name="companyrefund"
+                    placeholder="Company Refund"
+                    checked={formData.companyrefund}
+                    onChange={handleChange}
+                />
+                <label htmlFor="companyrefund">
+                    <a href="./CompanyRefundPolicy" target="_blank" rel="noopener noreferrer">Company Refund Policy</a>
+                </label><br></br>
 
-    <input
-        type="checkbox"
-        name="paymentpolicy"
-        placeholder="Payment Policy"
-     />
-    <label for="paymentpolicy"> 
-    <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">Payment Policy</a>
-    </label><br></br>
+                <input
+                    type="checkbox"
+                    name="paymentpolicy"
+                    placeholder="Payment Policy"
+                    checked={formData.paymentpolicy}
+                    onChange={handleChange}
+                />
+                <label htmlFor="paymentpolicy">
+                    <a href="./paymentPolicy" target="_blank" rel="noopener noreferrer">Payment Policy</a>
+                </label><br></br>
     
     <button>Sign Up</button>
             </form>
@@ -343,3 +381,4 @@ function SignUpIndividualTrainee() {
     );
 }
 export default SignUpIndividualTrainee;
+
