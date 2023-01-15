@@ -2,11 +2,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import history from '../history'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
     const [formData, setFormData] = useState({ Username: "", Password: "" });
     const [auth, setAuth] = useState("");
+    const navigate = useNavigate();
 
     function handleChange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,6 +34,7 @@ function Login() {
             );
             console.log(authentication.data);
             setAuth(authentication.data);
+            navigate("/IndividualTraineeHome")
         } catch (error) {
             console.log("User Not found");
         }
@@ -56,7 +58,7 @@ function Login() {
                     value={formData.password}
                     onChange={handleChange}
                 />
-                <Link to="./InstructorProfile"><button formAction="post">Login</button>
+                {/* <Link to="./InstructorProfile"><button formAction="post">Login</button>
                 </Link>
                 <div>
                     {auth ? (
@@ -64,13 +66,15 @@ function Login() {
                     ) : (
                         <LoginButton onClick={this.handleLoginClick} />
                     )}
-                </div>
+                </div> */}
+                {/* //<Link to="./Login"><button>Login</button> </Link> */}
+                <button formAction="post">Login</button>
                 <Link to="./GuestPage"><button>Continue as guest</button></Link>
                 <Link to="./SignUp"><button>Sign up</button></Link>
             </form>
 
             <h1>{auth}</h1>
-        </div>
+        </div >
     );
 }
 
