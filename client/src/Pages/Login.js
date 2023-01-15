@@ -14,6 +14,10 @@ function Login() {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        if (formData.Username === "" || formData.Password === "") {
+            console.log("Fields are required");
+            return;
+        }
         try {
             const userData = await axios.post(
                 "http://localhost:8000/user/login",
@@ -52,7 +56,15 @@ function Login() {
                     value={formData.password}
                     onChange={handleChange}
                 />
-                <Link to="./Login"><button>Login</button></Link>
+                <Link to="./InstructorProfile"><button formAction="post">Login</button>
+                </Link>
+                <div>
+                    {auth ? (
+                        <Link to="./GuestPage"><button>Continue as guest</button></Link>
+                    ) : (
+                        <LoginButton onClick={this.handleLoginClick} />
+                    )}
+                </div>
                 <Link to="./GuestPage"><button>Continue as guest</button></Link>
                 <Link to="./SignUp"><button>Sign up</button></Link>
             </form>
