@@ -25,21 +25,6 @@ function authenticateToken(req, res, next) {
     });
 }
 
-router.post("/login", async (req, res) => {
-    const user = await User.findOne({
-        Username: req.body.Username,
-        Password: req.body.Password,
-    });
-    if (user) {
-        const authUser = { name: user.Username, pass: user.Password };
-
-        const accessToken = generateAccessToken(authUser);
-        res.json({ accessToken: accessToken });
-    } else {
-        res.sendStatus(300);
-    }
-});
-
 function generateAccessToken(user) {
     return jwt.sign(user, process.env.SECRET_ACCESS_TOKEN);
 }
@@ -60,6 +45,21 @@ router.get("/login", async (req, res) => {
     });
     res.send(user);
     res.status(200).send("User Found");
+});
+
+router.post("/login", async (req, res) => {
+    const user = await User.findOne({
+        Username: req.body.Username,
+        Password: req.body.Password,
+    });
+    if (user) {
+        const authUser = { name: user.Username, pass: user.Password };
+
+        const accessToken = generateAccessToken(authUser);
+        res.json({ accessToken: accessToken });
+    } else {
+        res.sendStatus(300);
+    }
 });
 
 //----------------------------------------------------------

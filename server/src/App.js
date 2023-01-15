@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const axios = require("axios");
 const { MongoURI, ExchangeRatesAPIKey } = require("./settings.json");
+const cors = require('cors');
 
 //App variables
 const app = express();
@@ -50,6 +51,7 @@ app.get("/home", (req, res) => {
 });
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/user", require("./Routes/userController"));
 app.use("/instructor", require("./Routes/instructorController"));
