@@ -39,7 +39,7 @@ function IndividualTraineeHome() {
         }
     }
 
-    console.log(cookies.user.Username)
+    console.log(cookies.user.Username);
 
     React.useEffect(() => {
         async function getCourses() {
@@ -72,8 +72,17 @@ function IndividualTraineeHome() {
                     width="315"
                     height="100"
                 ></img>
-
-                return(
+                <a href="/IndividualTraineeProfile">
+                    {" "}
+                    <img
+                        name="profilePic"
+                        src={require("../profile.png")}
+                        alt="Logo"
+                        width="120"
+                        height="70"
+                    ></img>
+                </a>
+            </div>
 
                 <div className="Page">
                     <div className="Header">
