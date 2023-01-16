@@ -43,13 +43,9 @@ function Login() {
 
     return (
         <div id="loginContainer">
+
             <center>
-                <img
-                    src={require("../ACL_Logo.png")}
-                    alt="Logo"
-                    width="315"
-                    height="100"
-                ></img>
+                <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
                 <h1>Login</h1>
                 <div>
                     <form onSubmit={handleSubmit}>
@@ -57,32 +53,23 @@ function Login() {
                             type="text"
                             name="Username"
                             placeholder="Username"
-                            value={formData.Username}
+                            value={formData.username}
                             onChange={handleChange}
-                        />
-                        <br></br>
-
+                        /><br></br>
                         <input
                             type="password"
                             name="Password"
                             placeholder="Password"
-
-                            value={formData.Password}
-                            onChange={handleChange}
-                        />
-                        <button className="buttons" formAction="post">Login</button>
-
+                            value={formData.password}
+                            onChange={handleChange} />
+                        <button formAction="post">Login</button>
                         <Link to="./GuestPage">
-                            <button className="buttons">Continue as guest</button>
-                            <br></br>
+                            <button>Continue as guest</button>
                         </Link>
                         <Link to="./SignUp">
-                            <button className="buttons">Sign up</button>
-                            <br></br>
+                            <button>Sign up</button>
                         </Link>
-                        <a href="mailto:karimshura@gmail.com?subject='Hello from Abstract!'&body='Just popped in to say hello'">
-                            Forgot Password
-                        </a>
+                        <a href="">Forgotten password?</a>
                     </form>
                 </div>
             </center>

@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import { Link } from "react-router-dom";
-
-
-function SignUpIndividualTrainee() {
+function AdminAddUser() {
 
     const [formData, setFormData] = React.useState({
-        FirstName: "", LastName: "", Email: "", Password: "", Username: "", Country: "", Gender: "", Type: "Individual", companyrefund: false, websitepolicy: false, paymentpolicy: false
+        FirstName: "", LastName: "", Type: "", Email: "", Password: "", Username: "", Country: "", Gender: ""
     })
-
-
 
     function handleChange(event) {
         const { name, value, type, checked } = event.target
@@ -36,13 +31,13 @@ function SignUpIndividualTrainee() {
     }
     return (
         <div>
-            <h1>Sign Up as an Individual Trainee</h1>
+            <h1>Add new user</h1>
             <form onSubmit={handleSubmit}>
                 <h5>First Name:</h5>
                 <input
                     type="text"
                     name="FirstName"
-                    placeholder="firstname"
+                    placeholder="first name"
                     onChange={handleChange}
                     value={formData.FirstName}
                 />
@@ -50,7 +45,7 @@ function SignUpIndividualTrainee() {
                 <input
                     type="text"
                     name="LastName"
-                    placeholder="lastname"
+                    placeholder="last name"
                     onChange={handleChange}
                     value={formData.LastName}
                 />
@@ -74,6 +69,13 @@ function SignUpIndividualTrainee() {
                 />
                 <label htmlFor="female">Female</label><br></br>
 
+                <h5>Choose Type</h5>
+                <select id="userType" name="Type" onChange={handleChange} value={formData.Type}>
+                    <option>--choose user type--</option>
+                    <option value="Admin">Administrator</option>
+                    <option value="Instructor">Instructor</option>
+                    <option value="Corporate">Corporate Trainee</option>
+                </select>
 
                 <h5>Email:</h5>
                 <input
@@ -83,6 +85,7 @@ function SignUpIndividualTrainee() {
                     onChange={handleChange}
                     value={formData.Email}
                 />
+
                 <h5>Username:</h5>
                 <input
                     type="text"
@@ -91,6 +94,7 @@ function SignUpIndividualTrainee() {
                     onChange={handleChange}
                     value={formData.Username}
                 />
+
                 <h5>Password:</h5>
                 <input
                     type="password"
@@ -120,43 +124,11 @@ function SignUpIndividualTrainee() {
                     <option value="United Kingdom">United Kingdom</option>
                     <option value="United States">United States</option>
                 </select>
-                <h4>Policy Agreements:</h4>
-                <input
-                    type="checkbox"
-                    name="websitepolicy"
-                    placeholder="Website Policy"
-                    checked={formData.websitepolicy}
-                    onChange={handleChange}
-                />
-                <label htmlFor="websitepolicy">
-                    <a href="./WebsitePolicy" target="_blank" rel="noopener noreferrer">Website Policy</a>
-                </label><br></br>
-                <input
-                    type="checkbox"
-                    name="companyrefund"
-                    placeholder="Company Refund"
-                    checked={formData.companyrefund}
-                    onChange={handleChange}
-                />
-                <label htmlFor="companyrefund">
-                    <a href="./CompanyRefundPolicy" target="_blank" rel="noopener noreferrer">Company Refund Policy</a>
-                </label><br></br>
 
-                <input
-                    type="checkbox"
-                    name="paymentpolicy"
-                    placeholder="Payment Policy"
-                    checked={formData.paymentpolicy}
-                    onChange={handleChange}
-                />
-                <label htmlFor="paymentpolicy">
-                    <a href="./paymentPolicy" target="_blank" rel="noopener noreferrer">Payment Policy</a>
-                </label><br></br>
-
-                <button>Sign Up</button>
+                <button>Create user</button>
             </form>
         </div>
     );
 }
-export default SignUpIndividualTrainee;
+export default AdminAddUser;
 
