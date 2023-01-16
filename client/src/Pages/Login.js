@@ -62,8 +62,7 @@ function Login() {
                             placeholder="Password"
                             value={formData.password}
                             onChange={handleChange}
-                        ></input>
-                        <button formAction="post">Login</button>
+                <button formAction="post">Login</button>
                         <Link to="./GuestPage">
                             <button>Continue as guest</button>
                         </Link>

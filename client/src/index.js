@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import IndividualTraineeHome from "./Pages/IndividualTraineeHome";
 import IndividualTraineeProfile from "./Pages/IndividualTraineeProfile";
+import IndividualTraineePayment from "./Pages/IndividualTraineePayment";
+import IndividualTraineeChangePassword from "./Pages/IndividualTraineeChangePassword";
 import AdminHome from "./Pages/AdminHome";
 import AdminAddUser from "./Pages/AdminAddUser";
 import AdminSetPromotion from "./Pages/AdminSetPromotion";
@@ -34,9 +36,6 @@ root.render(
                     element={<CompanyRefundPolicy />}
                 />
                 <Route path="/IndividualTraineeProfile" element={<IndividualTraineeProfile />} />
-                <Route path="/AdminHome" element={<AdminHome />} />
-                <Route path="/AdminAddUser" element={<AdminAddUser />} />
-                <Route path="/AdminHome/AdminSetPromotion" element={<AdminSetPromotion />} />
             </Routes>
         </Router>
     </CookiesProvider>
