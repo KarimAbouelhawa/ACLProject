@@ -43,9 +43,13 @@ function Login() {
 
     return (
         <div id="loginContainer">
-
             <center>
-                <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
+                <img
+                    src={require("../ACL_Logo.png")}
+                    alt="Logo"
+                    width="315"
+                    height="100"
+                ></img>
                 <h1>Login</h1>
                 <div>
                     <form onSubmit={handleSubmit}>
@@ -53,18 +57,21 @@ function Login() {
                             type="text"
                             name="Username"
                             placeholder="Username"
-                            value={formData.username}
+                            value={formData.Username}
                             onChange={handleChange}
-                        /><br></br>
+                        />
+                        <br></br>
+
                         <input
                             type="password"
                             name="Password"
                             placeholder="Password"
-                            value={formData.password}
-                            onChange={handleChange} />
-                            <br></br>
+
+                            value={formData.Password}
+                            onChange={handleChange}
+                        />
                         <button className="buttons" formAction="post">Login</button>
-                        <br></br>
+
                         <Link to="./GuestPage">
                             <button className="buttons">Continue as guest</button>
                             <br></br>
@@ -73,7 +80,9 @@ function Login() {
                             <button className="buttons">Sign up</button>
                             <br></br>
                         </Link>
-                        <a href="">Forgotten password?</a>
+                        <a href="mailto:karimshura@gmail.com?subject='Hello from Abstract!'&body='Just popped in to say hello'">
+                            Forgot Password
+                        </a>
                     </form>
                 </div>
             </center>
