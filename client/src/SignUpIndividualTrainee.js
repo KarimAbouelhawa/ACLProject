@@ -72,7 +72,6 @@ async function handleSubmit(e){
                   <label htmlFor="female">Female</label><br></br>
 
 
-               
                 <h5>Email:</h5>
                 <input
                     type="text"

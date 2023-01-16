@@ -1,12 +1,14 @@
 import "../Styles/index.css";
 import React, { useState } from "react";
 import axios from "axios";
-import history from '../history'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 function Login() {
     const [formData, setFormData] = useState({ Username: "", Password: "" });
     const [auth, setAuth] = useState("");
+    const [cookies, setCookie] = useCookies(["user"]);
+    const navigate = useNavigate();
 
     function handleChange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,6 +16,10 @@ function Login() {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        if (formData.Username === "" || formData.Password === "") {
+            console.log("Fields are required");
+            return;
+        }
         try {
             const userData = await axios.post(
                 "http://localhost:8000/user/login",
@@ -27,8 +33,9 @@ function Login() {
                     },
                 }
             );
-            console.log(authentication.data);
+            setCookie("user", userData.data, { path: "/" });
             setAuth(authentication.data);
+            navigate("/IndividualTraineeHome");
         } catch (error) {
             console.log("User Not found");
         }
@@ -55,10 +62,13 @@ function Login() {
                     placeholder="Password"
                     value={formData.password}
                     onChange={handleChange}
-                /><br></br>
-                <Link to="./Login"><button>Login</button></Link><br></br>
-                <Link to="./GuestPage"><button>Continue as guest</button></Link><br></br>
-                <Link to="./SignUp"><button>Sign up</button></Link><br></br>
+                <button formAction="post">Login</button>
+                <Link to="./GuestPage">
+                    <button>Continue as guest</button>
+                </Link>
+                <Link to="./SignUp">
+                    <button>Sign up</button>
+                </Link>
                 <a href="">Forgotten password?</a>
             </form>
             </div>
