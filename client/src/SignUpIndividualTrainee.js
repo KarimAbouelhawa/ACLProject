@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
     
 function SignUpIndividualTrainee() {
@@ -30,9 +31,10 @@ async function handleSubmit(e){
             );
 
         } catch (error) {
-
+            
         }
     }
+
 }
     return (
         <div>
@@ -152,8 +154,9 @@ async function handleSubmit(e){
                 <label htmlFor="paymentpolicy">
                     <a href="./paymentPolicy" target="_blank" rel="noopener noreferrer">Payment Policy</a>
                 </label><br></br>
-    
-                <button name="signUp">Sign Up</button>
+                <Link to>
+                    <button name="signUp">Sign Up</button>
+                </Link>
             </form>
         </div>
     );

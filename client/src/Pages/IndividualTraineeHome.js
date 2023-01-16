@@ -8,6 +8,8 @@ function IndividualTraineeHome() {
     const [courses, setCourses] = React.useState([]);
     const [cookies, setCookie] = useCookies(["user"]);
 
+    console.log(cookies.user.Username)
+
     React.useEffect(() => {
         async function getCourses() {
             const res = await axios.get("http://localhost:8000/course/");
@@ -20,17 +22,6 @@ function IndividualTraineeHome() {
         getCourses();
     }, []);
 
-    return (
-        <div className="Page">
-            <div className="Header">
-                <img
-                    src={require("../ACL_Logo.png")}
-                    alt="Logo"
-                    width="315"
-                    height="100"
-                ></img>
-            </div>
-        </div>)
     return (
 
         <div className="Page">

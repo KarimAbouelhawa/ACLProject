@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: cornflowerblue;
+  background-color: #6495ed;
 }
 
 code {
@@ -20,6 +20,20 @@ code {
   margin-left: 600px;
   margin-right: 600px;
   margin-top: 200px;
+  margin-bottom: 200px;
   padding-bottom: 50px;
   background-color: blanchedalmond;
+}
+.buttons{
+  background-color: #6495ed;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 200px;
 }

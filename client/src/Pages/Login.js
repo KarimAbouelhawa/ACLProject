@@ -62,12 +62,16 @@ function Login() {
                             placeholder="Password"
                             value={formData.password}
                             onChange={handleChange} />
-                        <button formAction="post">Login</button>
+                            <br></br>
+                        <button className="buttons" formAction="post">Login</button>
+                        <br></br>
                         <Link to="./GuestPage">
-                            <button>Continue as guest</button>
+                            <button className="buttons">Continue as guest</button>
+                            <br></br>
                         </Link>
                         <Link to="./SignUp">
-                            <button>Sign up</button>
+                            <button className="buttons">Sign up</button>
+                            <br></br>
                         </Link>
                         <a href="">Forgotten password?</a>
                     </form>
