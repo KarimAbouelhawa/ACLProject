@@ -23,7 +23,7 @@ function IndividualTraineeHome() {
             <div className = "Header">
             <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
             
-            <img src={require("../profile.png")} alt="Logo" width="120" height="70"></img>
+            <a href="/IndividualTraineeProfile"> <img name = "profilePic" src={require("../profile.png")} alt="Logo" width="120" height="70"></img></a>
             </div>
 
             <div className  = "LeftPanel">

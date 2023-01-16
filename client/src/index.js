@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Login from "./Pages/Login";
 //import SignUp from "./Pages/SignUp";
 import IndividualTraineeHome from "./Pages/IndividualTraineeHome";
+import IndividualTraineeProfile from "./Pages/IndividualTraineeProfile";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -21,5 +22,6 @@ root.render(<Router>
         <Route path="/paymentPolicy" element={<PaymentPolicy />}/>
         <Route path="/WebsitePolicy" element={<WebsitePolicy />}/>
         <Route path="/CompanyRefundPolicy" element={<CompanyRefundPolicy />}/>
+        <Route path="/IndividualTraineeProfile" element={<IndividualTraineeProfile />}/>
     </Routes>
 </Router>);
