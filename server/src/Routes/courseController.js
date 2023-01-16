@@ -40,7 +40,7 @@ router.post("/search/filter", async (req, res) => {
     }
 
     if (req.body.Rating) {
-        filterParams = { ...filterParams, Rating: { $lte: req.body.Rating } };
+        filterParams = { ...filterParams, Rating: { $gte: req.body.Rating } };
     }
 
     if (req.body.Subject) {
