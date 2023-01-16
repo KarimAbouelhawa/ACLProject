@@ -1,0 +1,83 @@
+h1{
+    color: rgb(6, 7, 7);
+
+}
+#loginContainer {
+    outline-style: solid;
+    outline-color:black;
+    outline-width: medium;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 200px;
+    padding-bottom: 50px;
+    background-color: blanchedalmond;
+  }
+
+h4{
+    text-align: left;
+    margin-left: 10px;
+}
+
+.inputDetails{
+    display: flex;
+}
+
+input{
+    margin-left: 20px;
+    margin: 20px  20px;
+    width: 300px;
+}
+
+#profileContainer {
+    outline-style: solid;
+    outline-color:black;
+    outline-width: medium;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 200px;
+    padding-bottom: 50px;
+    background-color: blanchedalmond;
+}
+.logout {
+    background-color: #943636;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 55%;
+    cursor: pointer;
+}
+.changepassword {
+    background-color: #6495ed;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.paymentdetails {
+    background-color: #6495ed;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.signout{
+    background-color: #943636;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

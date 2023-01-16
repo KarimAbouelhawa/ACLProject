@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
     
 function SignUpIndividualTrainee() {
 
@@ -21,6 +23,7 @@ function handleChange(event){
 console.log(formData)
 async function handleSubmit(e){
     e.preventDefault();
+    if(formData.companyrefund && formData.paymentpolicy && formData.websitepolicy){
         try {
             const userData = await axios.post(
                 "http://localhost:8000/user/create",
@@ -28,8 +31,10 @@ async function handleSubmit(e){
             );
 
         } catch (error) {
-
+            
         }
+    }
+
 }
     return (
         <div>
@@ -149,8 +154,9 @@ async function handleSubmit(e){
                 <label htmlFor="paymentpolicy">
                     <a href="./paymentPolicy" target="_blank" rel="noopener noreferrer">Payment Policy</a>
                 </label><br></br>
-    
-    <button>Sign Up</button>
+                <Link to>
+                    <button name="signUp">Sign Up</button>
+                </Link>
             </form>
         </div>
     );
