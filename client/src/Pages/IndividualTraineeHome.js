@@ -39,7 +39,7 @@ function IndividualTraineeHome() {
         }
     }
 
-    console.log(cookies.user.Username)
+    console.log(cookies.user.Username);
 
     React.useEffect(() => {
         async function getCourses() {
@@ -64,7 +64,14 @@ function IndividualTraineeHome() {
     }, []);
 
     return (
-
+        <div className="Page">
+            <div className="Header">
+                <img
+                    src={require("../ACL_Logo.png")}
+                    alt="Logo"
+                    width="315"
+                    height="100"
+                ></img>
                 <a href="/IndividualTraineeProfile">
                     {" "}
                     <img
