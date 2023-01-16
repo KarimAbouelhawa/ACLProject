@@ -7,6 +7,7 @@ import "../Styles/IndividualTraineeHomeStyles.css";
 function IndividualTraineeHome() {
     const [title, setTitle] = useState("All Courses");
     const [courses, setCourses] = React.useState([]);
+    const [topCourses, setTopCourses] = React.useState([]);
     const [cookies, setCookie] = useCookies(["user"]);
     const [formData, setFormData] = useState({
         Title: "",
@@ -45,7 +46,17 @@ function IndividualTraineeHome() {
             const courseComponents = courses.map(course => (
                 <CourseComponent {...course} />
             ));
+            const resTop = await axios.post(
+                "http://localhost:8000/course/search/filter",
+                { Rating: 5 }
+            );
+            const topCourses = resTop.data;
+            const topCourseComponents = topCourses.map(course => (
+                <CourseComponent {...course} />
+            ));
+
             setCourses(courseComponents);
+            setTopCourses(topCourseComponents);
         }
         getCourses();
     }, []);
@@ -122,6 +133,8 @@ function IndividualTraineeHome() {
             <div id="middle">
                 <h1>{title}</h1>
                 <div className="MiddlePanel">{courses}</div>
+                <h1>Most Popular Courses:</h1>
+                <div className="MiddlePanel">{topCourses}</div>
             </div>
         </div>
     );

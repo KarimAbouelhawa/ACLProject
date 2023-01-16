@@ -76,7 +76,9 @@ function Login() {
                         <Link to="./SignUp">
                             <button>Sign up</button>
                         </Link>
-                        <a href="">Forgotten password?</a>
+                        <a href="mailto:karimshura@gmail.com?subject='Hello from Abstract!'&body='Just popped in to say hello'">
+                            Forgot Password
+                        </a>
                     </form>
                 </div>
             </center>
