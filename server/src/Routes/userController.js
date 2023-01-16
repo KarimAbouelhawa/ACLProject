@@ -32,8 +32,13 @@ function generateAccessToken(user) {
 router.post("/create", async (req, res) => {
     await User.create({
         Username: req.body.Username,
+        Email: req.body.Email,
         Password: req.body.Password,
         Type: req.body.Type,
+        FirstName: req.body.FirstName,
+        LastName: req.body.LastName,
+        Gender: req.body.Gender,
+        Country: req.body.Country,
     });
     res.status(200).send("User Created");
 });

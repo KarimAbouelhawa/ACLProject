@@ -30,12 +30,14 @@ function IndividualTraineeHome() {
                     height="100"
                 ></img>
 
-                <img
-                    src={require("../profile.png")}
-                    alt="Logo"
-                    width="120"
-                    height="70"
-                ></img>
+    return(
+
+        <div className = "Page">
+            <div className = "Header">
+            <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
+            
+            <a href="/IndividualTraineeProfile"> <img name = "profilePic" src={require("../profile.png")} alt="Logo" width="120" height="70"></img></a>
+
             </div>
 
             <div className="LeftPanel">
@@ -53,9 +55,15 @@ function IndividualTraineeHome() {
                 <h4 className="searchTitles">By Price:</h4>
                 <input type="text" name="SearchBarInstructor" size="40" />
             </div>
-            <div className="MiddlePanel">
-                <h1>Popular Courses: </h1>
-                {courses}
+            
+            <div id="middle">
+                <h1>All Courses: </h1>
+                <div className = "MiddlePanel">
+            
+                    {courses}
+                    
+                </div>
+
                 <h1>My Courses: </h1>
             </div>
         </div>

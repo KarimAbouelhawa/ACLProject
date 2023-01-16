@@ -17,7 +17,7 @@ If you are not satisfied with your purchase, you may request a refund within 30 
 Changes to the Policy:
 KATAYA reserves the right to change this policy at any time. Any changes will be posted on the Website.
 Contact Us:
-If you have any questions or concerns about this policy, please contact us at KATAYA@KATAYA.com/1991.</p>
+If you have any questions or concerns about this policy, please contact us at KATAYA@KATAYA.com/19991.</p>
             </form>
         </div>
     );
