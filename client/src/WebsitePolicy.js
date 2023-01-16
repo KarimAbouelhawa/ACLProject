@@ -17,7 +17,7 @@ The Website is intended for personal and non-commercial use. Users are prohibite
 Changes to the Policy
 KATAYA reserves the right to change this policy at any time. Any changes will be posted on the Website.
 Contact Us:
-If you have any questions or concerns about this policy, please contact us at KATAYA@KATAYA.com/1991.
+If you have any questions or concerns about this policy, please contact us at KATAYA@KATAYA.com/19991.
 </p>
             </form>
         </div>

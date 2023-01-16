@@ -8,6 +8,7 @@ const userSchema = new Schema({
   },
   Email: {
     type: String,
+    required: true,
   },
   Password: {
     type: String,
@@ -15,16 +16,16 @@ const userSchema = new Schema({
   },
   FirstName: {
     type: String,
-
+    required: true,
   },
   LastName: {
     type: String,
-
+    required: true,
   },
   Gender: {
     type: String,
     enum: ["Male", "Female"],
-
+    required: true,
   },
   Type: {
     type: String,
@@ -33,7 +34,7 @@ const userSchema = new Schema({
   },
   Country: {
     type: String,
-
+    required: true,
   },
 Courses: {
     type: Array,

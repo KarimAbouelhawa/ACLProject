@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 //import SignUp from "./Pages/SignUp";
 import IndividualTraineeHome from "./Pages/IndividualTraineeHome";
+import IndividualTraineeProfile from "./Pages/IndividualTraineeProfile";
 
 //import Page2 from "./page2"
 //import Login2 from "./Pages/Login2";
@@ -33,6 +34,7 @@ root.render(
                     path="/CompanyRefundPolicy"
                     element={<CompanyRefundPolicy />}
                 />
+                <Route path="/IndividualTraineeProfile" element={<IndividualTraineeProfile />}/>
             </Routes>
         </Router>
     </CookiesProvider>
