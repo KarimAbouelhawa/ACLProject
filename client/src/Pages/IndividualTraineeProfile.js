@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function IndividualTraineeProfile() {
-    return(
+    return (
         <div>
             <h1>test</h1>
         </div>

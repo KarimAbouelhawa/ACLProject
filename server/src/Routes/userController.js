@@ -145,4 +145,10 @@ router.post("/changePass", async (req, res) => {
     }
 });
 
+router.put("/coursesDiscount", async (req, res) => {
+    //const courses= await Course.find({Instructor: req.body.instructor});
+    await Course.updateOne({ Title: req.body.Title }, { $set: { Discount: req.body.Discount } });
+    res.send("Discount added");
+});
+
 module.exports = router;

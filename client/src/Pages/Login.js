@@ -43,35 +43,36 @@ function Login() {
 
     return (
         <div id="loginContainer">
-            
+
             <center>
-            <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
-            <h1>Login</h1>
-            <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="Username"
-                    placeholder="Username"
-                    value={formData.username}
-                    onChange={handleChange}
-                /><br></br>
-                <input
-                    type="password"
-                    name="Password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                <button formAction="post">Login</button>
-                <Link to="./GuestPage">
-                    <button>Continue as guest</button>
-                </Link>
-                <Link to="./SignUp">
-                    <button>Sign up</button>
-                </Link>
-                <a href="">Forgotten password?</a>
-            </form>
-            </div>
+                <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
+                <h1>Login</h1>
+                <div>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            name="Username"
+                            placeholder="Username"
+                            value={formData.username}
+                            onChange={handleChange}
+                        /><br></br>
+                        <input
+                            type="password"
+                            name="Password"
+                            placeholder="Password"
+                            value={formData.password}
+                            onChange={handleChange}
+                        ></input>
+                        <button formAction="post">Login</button>
+                        <Link to="./GuestPage">
+                            <button>Continue as guest</button>
+                        </Link>
+                        <Link to="./SignUp">
+                            <button>Sign up</button>
+                        </Link>
+                        <a href="">Forgotten password?</a>
+                    </form>
+                </div>
             </center>
 
             <h1>{auth}</h1>
