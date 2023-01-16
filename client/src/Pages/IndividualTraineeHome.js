@@ -59,6 +59,9 @@ function IndividualTraineeHome() {
                     width="315"
                     height="100"
                 ></img>
+            </div>
+        </div>)
+    return (
 
                 <a href="/IndividualTraineeProfile">
                     {" "}
