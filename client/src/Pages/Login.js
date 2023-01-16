@@ -66,15 +66,19 @@ function Login() {
                             type="password"
                             name="Password"
                             placeholder="Password"
+
                             value={formData.Password}
                             onChange={handleChange}
                         />
-                        <button formAction="post">Login</button>
+                        <button className="buttons" formAction="post">Login</button>
+
                         <Link to="./GuestPage">
-                            <button>Continue as guest</button>
+                            <button className="buttons">Continue as guest</button>
+                            <br></br>
                         </Link>
                         <Link to="./SignUp">
-                            <button>Sign up</button>
+                            <button className="buttons">Sign up</button>
+                            <br></br>
                         </Link>
                         <a href="mailto:karimshura@gmail.com?subject='Hello from Abstract!'&body='Just popped in to say hello'">
                             Forgot Password
