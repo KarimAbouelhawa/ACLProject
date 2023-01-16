@@ -43,7 +43,9 @@ function IndividualTraineeChangePassword() {
     return(
     <div>
         <div className="Header">
+        <a href="/IndividualTraineeHome">
                 <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
+        </a>   
                 <Link to="/IndividualTraineeProfile">
                     <button class = "changepassword">Cancel</button>
                 </Link>
@@ -77,7 +79,7 @@ function IndividualTraineeChangePassword() {
                 />
                 </div>
                 <br></br>
-                <button formAction="post">Save</button>
+                <button className="changepassword" formAction="post">Save</button>
                 </form>
                 
             </div>

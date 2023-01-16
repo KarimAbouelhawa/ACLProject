@@ -45,7 +45,9 @@ function IndividualTraineePayment() {
     return(
         <div>
         <div className="Header">
+        <a href="/IndividualTraineeHome">
                 <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
+        </a>   
                 <Link to="/IndividualTraineeProfile">
                     <button class = "changepassword">Cancel</button>
                 </Link>
@@ -90,7 +92,7 @@ function IndividualTraineePayment() {
                 />
                 </div>
                 <br></br>
-                <button formAction="post">Save</button>
+                <button class = "changepassword" formAction="post">Save</button>
                 </form>
                 
             </div>

@@ -14,7 +14,9 @@ function IndividualTraineeProfile() {
     return(
     <div>
         <div className="Header">
+        <a href="/IndividualTraineeHome">
                 <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
+        </a>        
                 <Link to="/" className= "logout">
                     <button className ="signout">Sign Out</button>
                 </Link>

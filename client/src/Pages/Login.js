@@ -71,7 +71,7 @@ function Login() {
                             onChange={handleChange}
                         />
                         <button className="buttons" formAction="post">Login</button>
-
+                        <br></br>
                         <Link to="./GuestPage">
                             <button className="buttons">Continue as guest</button>
                             <br></br>
@@ -80,6 +80,7 @@ function Login() {
                             <button className="buttons">Sign up</button>
                             <br></br>
                         </Link>
+                        <br></br>
                         <a href="mailto:karimshura@gmail.com?subject='Hello from Abstract!'&body='Just popped in to say hello'">
                             Forgot Password
                         </a>
