@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import "../Styles/AdminHomeStyle.css";
 function AdminAddUser() {
 
     const [formData, setFormData] = React.useState({
@@ -50,6 +50,7 @@ function AdminAddUser() {
                     value={formData.LastName}
                 />
                 <h5>Gender:</h5>
+
                 <input
                     type="radio"
                     id="male"

@@ -97,18 +97,18 @@ router.put("/:username/changeCountry", async (req, res) => {
     res.status(200).send("Country Updated");
 });
 
-router.put("/:username/addCardDetails", async(req,res) => {
+router.put("/:username/addCardDetails", async (req, res) => {
     await User.updateOne(
-        {Username: req.params.username},
-        {$set: {CardName: req.body.CardName}}
+        { Username: req.params.username },
+        { $set: { CardName: req.body.CardName } }
     )
     await User.updateOne(
-        {Username: req.params.username},
-        {$set: {CardNumber: req.body.CardNumber}}
+        { Username: req.params.username },
+        { $set: { CardNumber: req.body.CardNumber } }
     )
     await User.updateOne(
-        {Username: req.params.username},
-        {$set: {CardCVV: req.body.CardCVV}}
+        { Username: req.params.username },
+        { $set: { CardCVV: req.body.CardCVV } }
     )
     res.status(200).send("Card Updated");
 })
