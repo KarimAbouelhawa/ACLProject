@@ -47,6 +47,18 @@ Courses: {
   },
   Reviews:{
     type: Array,
+  },
+  CardName: {
+    type: String,
+  },
+  CardNumber: {
+    type: String,
+  },
+  CardCVV: {
+    type: String,
+  },
+  Wallet: {
+    type: Number,
   }
 }, { timestamps: true });
 

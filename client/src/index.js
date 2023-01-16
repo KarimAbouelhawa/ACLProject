@@ -12,6 +12,8 @@ import Login from "./Pages/Login";
 //import SignUp from "./Pages/SignUp";
 import IndividualTraineeHome from "./Pages/IndividualTraineeHome";
 import IndividualTraineeProfile from "./Pages/IndividualTraineeProfile";
+import IndividualTraineePayment from "./Pages/IndividualTraineePayment";
+import IndividualTraineeChangePassword from "./Pages/IndividualTraineeChangePassword";
 
 //import Page2 from "./page2"
 //import Login2 from "./Pages/Login2";
@@ -35,6 +37,8 @@ root.render(
                     element={<CompanyRefundPolicy />}
                 />
                 <Route path="/IndividualTraineeProfile" element={<IndividualTraineeProfile />}/>
+                <Route path="/IndividualTraineePayment" element={<IndividualTraineePayment />}/>
+                <Route path="/IndividualTraineeChangePassword" element={<IndividualTraineeChangePassword />}/>
             </Routes>
         </Router>
     </CookiesProvider>
