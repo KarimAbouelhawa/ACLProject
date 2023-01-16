@@ -36,6 +36,11 @@ root.render(
                     element={<CompanyRefundPolicy />}
                 />
                 <Route path="/IndividualTraineeProfile" element={<IndividualTraineeProfile />} />
+                <Route path="/IndividualTraineePayment" element={<IndividualTraineePayment />} />
+                <Route path="/IndividualTraineeChangePassword" element={<IndividualTraineeChangePassword />} />
+                <Route path="/AdminHome" element={<AdminHome />} />
+                <Route path="/AdminAddUser" element={<AdminAddUser />} />
+                <Route path="/AdminHome/AdminSetPromotion" element={<AdminSetPromotion />} />
             </Routes>
         </Router>
     </CookiesProvider>

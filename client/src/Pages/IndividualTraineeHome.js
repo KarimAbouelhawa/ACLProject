@@ -138,6 +138,8 @@ function IndividualTraineeHome() {
                         <h1>My Courses: </h1>
                     </div>
                 </div>
-                );
+            </div>
+        </div>
+    );
 }
-                export default IndividualTraineeHome;
+export default IndividualTraineeHome;

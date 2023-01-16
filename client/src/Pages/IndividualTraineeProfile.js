@@ -12,7 +12,7 @@ function IndividualTraineeProfile() {
                 <div id="profileContainer">
                     <br></br>
                     <img name="profilePic" src={require("../profile.png")} alt="Logo" width="250" height="250"></img>
-                    <h1>{cookies.user.Username}</h1>
+                    <h1></h1>
                     <Link to="/IndividualTraineePayment">
                         <button className="paymentdetails">Payment Details</button>
                     </Link>
@@ -25,10 +25,9 @@ function IndividualTraineeProfile() {
                 </div>
             </center>
             <div>
-                {courses}
+
             </div>
         </div>
-        </div >
     );
 }
 export default IndividualTraineeProfile;
