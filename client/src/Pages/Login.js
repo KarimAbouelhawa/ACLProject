@@ -43,9 +43,13 @@ function Login() {
 
     return (
         <div id="loginContainer">
-
             <center>
-                <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
+                <img
+                    src={require("../ACL_Logo.png")}
+                    alt="Logo"
+                    width="315"
+                    height="100"
+                ></img>
                 <h1>Login</h1>
                 <div>
                     <form onSubmit={handleSubmit}>
@@ -53,15 +57,18 @@ function Login() {
                             type="text"
                             name="Username"
                             placeholder="Username"
-                            value={formData.username}
+                            value={formData.Username}
                             onChange={handleChange}
-                        /><br></br>
+                        />
+                        <br></br>
+
                         <input
                             type="password"
                             name="Password"
                             placeholder="Password"
-                            value={formData.password}
-                            onChange={handleChange} />
+                            value={formData.Password}
+                            onChange={handleChange}
+                        />
                         <button formAction="post">Login</button>
                         <Link to="./GuestPage">
                             <button>Continue as guest</button>
