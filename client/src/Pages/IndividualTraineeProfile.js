@@ -3,7 +3,13 @@ import React, { useState } from "react";
 function IndividualTraineeProfile() {
     return(
         <div>
-            <h1>test</h1>
+            <center>
+                <div>
+                    <br></br>
+                    <img name = "profilePic" src={require("../profile.png")} alt="Logo" width="300" height="300"></img>
+                </div>
+            </center>
+
         </div>
     );
 }
