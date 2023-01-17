@@ -16,8 +16,7 @@ function InstructorProfile() {
                 "http://localhost:8000/instructor/" +
                 cookies.user.Username +
                 "/courses";
-            const res = await axios.get(url);
-            console.log(url);
+            const res = await axios.post(url);
             const courses = res.data;
             const courseComponents = courses.map(course => (
                 <InstructorCourseComponent {...course} />
@@ -133,7 +132,18 @@ function InstructorProfile() {
                         </form>
                     </div>
                 </center>
-                <div>{courses}</div>
+                <div className="courses">
+                    <center>{courses}</center>
+                </div>
+                <br />
+                <div>
+                    <center>
+                        <Link to="/createCourse">
+                            <button>Create Course</button>
+                        </Link>
+                    </center>
+                </div>
+                <br />
             </div>
         </div>
     );
