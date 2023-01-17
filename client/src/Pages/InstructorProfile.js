@@ -75,13 +75,7 @@ function InstructorProfile() {
                 <center>
                     <div id="profileContainer">
                         <br></br>
-                        <img
-                            name="profilePic"
-                            src={require("../profile.png")}
-                            alt="Logo"
-                            width="250"
-                            height="250"
-                        ></img>
+                        <img name="profilePic" src={require("../profileBlack.png")} alt="Logo" width="250" height="250"></img>
                         <h1>{cookies.user.Username}</h1>
                         <h2>{cookies.user.Email}</h2>
                         <h2>{cookies.user.Biography}</h2>

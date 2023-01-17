@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Cookies, useCookies } from "react-cookie";
 import "../Styles/IndividualTraineeProfileStyle.css";
-import CourseComponent from "../Components/CourseComponent";
 import TraineeCourseComponent from "../Components/TraineeCourseComponent";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -54,6 +53,24 @@ function IndividualTraineeProfile() {
                     <button className="changepassword">Change Password</button>
                 </Link>
             </div>
+        <div>
+            <center>
+                <div id="profileContainer">
+                    <br></br>
+
+                    <img name = "profilePic" src={require("../profileBlack.png")} alt="Logo" width="250" height="250"></img>
+                    <h1>{cookies.user.Username}</h1>
+                    <Link to="/IndividualTraineePayment">
+                        <button className="paymentdetails">Payment Details</button>
+                    </Link>
+                    <h3>My Wallet:</h3>
+                    <h2>{cookies.user.Wallet}</h2>
+                    <br></br>
+                </div>
+                <div>
+                    <h1>My Courses:</h1>
+                </div>
+            </center>
             <div>
                 <center>
                     <div id="profileContainer">
