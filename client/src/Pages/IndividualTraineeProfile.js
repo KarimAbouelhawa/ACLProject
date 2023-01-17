@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Cookies, useCookies } from "react-cookie";
 import "../Styles/IndividualTraineeProfileStyle.css";
 import CourseComponent from "../Components/CourseComponent";
+import TraineeCourseComponent from "../Components/TraineeCourseComponent";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 function IndividualTraineeProfile() {
@@ -10,6 +12,19 @@ function IndividualTraineeProfile() {
     const [cookies, setCookie] = useCookies(["user"]);
 
     console.log(cookies.user.Username)
+
+    React.useEffect(() => {
+        async function getCourses() {
+            const res = await axios.get("http://localhost:8000/user/" + cookies.user.Username + "/userCourses");
+            const courses = res.data;
+            const courseComponents = courses.map(course => (
+                <TraineeCourseComponent {...course} />
+            ));
+
+            setCourses(courseComponents);
+        }
+        getCourses();
+    }, []);
 
     return(
     <div>
@@ -21,7 +36,7 @@ function IndividualTraineeProfile() {
                     <button className ="signout">Sign Out</button>
                 </Link>
                 <Link to="/IndividualTraineeChangePassword">
-                    <button class = "changepassword">Change Password</button>
+                    <button className = "changepassword">Change Password</button>
                 </Link>
 
 
@@ -30,7 +45,7 @@ function IndividualTraineeProfile() {
             <center>
                 <div id="profileContainer">
                     <br></br>
-                    <img name = "profilePic" src={require("../profile.png")} alt="Logo" width="250" height="250"></img>
+                    <img name = "profilePic" src={require("../profileBlack.png")} alt="Logo" width="250" height="250"></img>
                     <h1>{cookies.user.Username}</h1>
                     <Link to="/IndividualTraineePayment">
                         <button className = "paymentdetails">Payment Details</button>

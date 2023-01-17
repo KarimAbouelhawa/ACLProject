@@ -72,7 +72,7 @@ function Login() {
                         />
                         <button className="buttons" formAction="post">Login</button>
                         <br></br>
-                        <Link to="./GuestPage">
+                        <Link to="./GuestHome">
                             <button className="buttons">Continue as guest</button>
                             <br></br>
                         </Link>
