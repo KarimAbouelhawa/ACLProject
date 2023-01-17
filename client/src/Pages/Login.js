@@ -50,10 +50,10 @@ function Login() {
                     width="315"
                     height="100"
                 ></img>
-                <h1>Login</h1>
+                <u><h1>Login</h1></u>
                 <div>
                     <form onSubmit={handleSubmit}>
-                        <input
+                        <input id = "loginInputs"
                             type="text"
                             name="Username"
                             placeholder="Username"
@@ -61,8 +61,9 @@ function Login() {
                             onChange={handleChange}
                         />
                         <br></br>
+                        <br></br>
 
-                        <input
+                        <input id = "loginInputs"
                             type="password"
                             name="Password"
                             placeholder="Password"
@@ -70,6 +71,8 @@ function Login() {
                             value={formData.Password}
                             onChange={handleChange}
                         />
+                        <br></br>
+                        <br></br>
                         <button className="buttons" formAction="post">Login</button>
                         <br></br>
                         <Link to="./GuestHome">

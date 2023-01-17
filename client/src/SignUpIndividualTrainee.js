@@ -41,7 +41,7 @@ async function handleSubmit(e){
 
 }
     return (
-        <div id="loginContainer">
+        <div id="paymentContainer">
             <div>
             <center>
                  <img
@@ -50,7 +50,7 @@ async function handleSubmit(e){
                     width="315"
                     height="100"
                 ></img>
-                <h1>Sign Up as an Individual Trainee</h1>   
+                <u><h1>Sign Up as an Individual Trainee</h1></u>
             </center>    
             <br></br>
             <form onSubmit={handleSubmit}>
@@ -175,6 +175,11 @@ async function handleSubmit(e){
                 <center>
                         <button className="searchbutton">Sign Up</button>
                 </center>
+                <Link to ="/">
+                <center>
+                        <button className="cancelbutton">Back</button>
+                </center>
+                </Link>
             </form>
         </div>
     </div>
