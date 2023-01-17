@@ -5,23 +5,22 @@ const Exercise = require("../Models/Exercise");
 const User = require("../Models/User");
 
 // Requirements 18 & 19 & 20
-router.get("/:instructor/courses", async (req, res) => {
+router.post("/:instructor/courses", async (req, res) => {
     let searchParams = { Instructor: req.params.instructor };
 
     if (req.body.Title) {
-        searchParams = { ...searchParams, Title: req.body.Title };
+        searchParams = { ...searchParams, Title: { $regex: req.body.Title } };
     }
 
     if (req.body.Subject) {
-        searchParams = { ...searchParams, Subject: req.body.Subject };
+        searchParams = {
+            ...searchParams,
+            Subject: { $regex: req.body.Subject },
+        };
     }
 
     if (req.body.Price) {
-        if (req.body.PriceRange === ">")
-            searchParams = { ...searchParams, Price: { $gte: req.body.Price } };
-        else if (req.body.PriceRange === "<")
-            searchParams = { ...searchParams, Price: { $lte: req.body.Price } };
-        else searchParams = { ...searchParams, Price: req.body.Price };
+        searchParams = { ...searchParams, Price: { $lte: req.body.Price } };
     }
 
     const instructorCourses = await Course.find(searchParams);
