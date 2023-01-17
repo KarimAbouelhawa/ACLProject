@@ -118,3 +118,9 @@
     justify-self: center;
     border-radius: 12px;
 }
+
+.exercise{
+    border: #6495ed;
+    border-radius: 5px;
+    padding: 15px 32px;
+}

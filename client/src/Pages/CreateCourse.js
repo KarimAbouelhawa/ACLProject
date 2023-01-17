@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import "../Styles/IndividualTraineeHomeStyles.css";
+import "../Styles/CreateCourse.css";
 import { Cookies, useCookies } from "react-cookie";
 import SubtitleFormComponent from "../Components/SubtitleFormComponent";
 
-function SignUpIndividualTrainee() {
+function CreateCourse() {
     const navigate = useNavigate();
     const cookies = useCookies(["user"]);
     const [errorMessage, setErrorMessage] = useState("");
-    const [formData, setFormData] = React.useState({ Subtitles: [] });
+    const [formData, setFormData] = useState({
+        Subtitles: [],
+        Exercise: [],
+    });
     const [subtitleComponents, setSubtitleComponents] = React.useState([]);
     const [subtitleData, setSubtitleData] = React.useState([]);
     const [subtitleNumber, setSubtitleNumber] = useState(1);
@@ -54,6 +57,15 @@ function SignUpIndividualTrainee() {
             formData.Subtitles.push(subtitleData[i]);
             formData.Hours = formData.Hours + subtitleData[i].Length;
         }
+        const newForm = formData;
+        newForm.Exercise.push(formData.ExerciseQuestion);
+        newForm.Exercise.push(formData.ExerciseAnswer1);
+        newForm.Exercise.push(formData.ExerciseAnswer2);
+        newForm.Exercise.push(formData.ExerciseAnswer3);
+        newForm.Exercise.push(formData.ExerciseAnswer4);
+        newForm.Exercise.push(formData.CorrectAnswer);
+        setFormData(newForm);
+        console.log(formData.Exercise);
         if (formData.AgreementContract) {
             try {
                 const userData = await axios.post(
@@ -65,6 +77,8 @@ function SignUpIndividualTrainee() {
             } catch (error) {
                 setErrorMessage("Incomplete Data");
             }
+        } else {
+            setErrorMessage("You must agree on the contract");
         }
     }
 
@@ -93,10 +107,13 @@ function SignUpIndividualTrainee() {
                         value={formData.Title}
                     />
                     <h4>Subtitles:</h4>
-                    <div>{subtitleComponents}</div>
-                    <button type="button" onClick={addSubtitle}>
-                        Add Subtitle
-                    </button>
+                    <div className="course">{subtitleComponents}</div>
+                    <br />
+                    <center>
+                        <button type="button" onClick={addSubtitle}>
+                            Add Subtitle
+                        </button>
+                    </center>
                     <h4>Price: </h4>
                     <input
                         type="number"
@@ -130,6 +147,64 @@ function SignUpIndividualTrainee() {
                         onChange={handleChange}
                         value={formData.PreviewLink}
                     />
+                    <br />
+                    <br />
+                    <div className="exercise">
+                        <h3>Exercise:</h3>
+                        <h4>Question:</h4>
+                        <input
+                            type="text"
+                            name="ExerciseQuestion"
+                            placeholder="Question"
+                            onChange={handleChange}
+                            value={formData.Exercise[0]}
+                        />
+                        <h4>Answer 1:</h4>
+                        <input
+                            type="text"
+                            name="ExerciseAnswer1"
+                            placeholder="Answer"
+                            onChange={handleChange}
+                            value={formData.Exercise[1]}
+                        />
+                        <h4>Answer 2:</h4>
+                        <input
+                            type="text"
+                            name="ExerciseAnswer2"
+                            placeholder="Answer"
+                            onChange={handleChange}
+                            value={formData.Exercise[2]}
+                        />
+                        <h4>Answer 3:</h4>
+                        <input
+                            type="text"
+                            name="ExerciseAnswer3"
+                            placeholder="Answer"
+                            onChange={handleChange}
+                            value={formData.Exercise[3]}
+                        />
+                        <h4>Answer 4:</h4>
+                        <input
+                            type="text"
+                            name="ExerciseAnswer4"
+                            placeholder="Answer"
+                            onChange={handleChange}
+                            value={formData.Exercise[4]}
+                        />
+                        <h4>Correct Answer:</h4>
+                        <select
+                            id="CorrectAnswer"
+                            name="CorrectAnswer"
+                            onChange={handleChange}
+                            value={formData.Exercise[5]}
+                        >
+                            <option>--select the answer--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
                     <h4>Agreement Contract:</h4>
 
                     <input
@@ -139,13 +214,13 @@ function SignUpIndividualTrainee() {
                         checked={formData.AgreementContract}
                         onChange={handleChange}
                     />
-                    <label htmlFor="websitepolicy">
+                    <label htmlFor="agreementcontract">
                         <a
-                            href="./WebsitePolicy"
+                            href="./AgreementContract"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Website Policy
+                            Agreement Contract
                         </a>
                     </label>
                     <br />
@@ -169,4 +244,4 @@ function SignUpIndividualTrainee() {
         </div>
     );
 }
-export default SignUpIndividualTrainee;
+export default CreateCourse;

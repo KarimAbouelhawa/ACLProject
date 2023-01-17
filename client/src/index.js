@@ -22,6 +22,7 @@ import InstructorProfile from "./Pages/InstructorProfile";
 import InstructorEdit from "./Pages/InstructorEdit";
 import GuestHome from "./Pages/GuestHome";
 import CreateCourse from "./Pages/CreateCourse";
+import AgreementContract from "./AgreementContract";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -67,6 +68,10 @@ root.render(
                 <Route path="/CreateCourse" element={<CreateCourse />} />
                 <Route path="/GuestHome" element={<GuestHome />} />
                 <Route path="/Course/:coursename" element={<Course />} />
+                <Route
+                    path="/AgreementContract"
+                    element={<AgreementContract />}
+                />
             </Routes>
         </Router>
     </CookiesProvider>
