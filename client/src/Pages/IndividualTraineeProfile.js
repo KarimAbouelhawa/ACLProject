@@ -59,7 +59,7 @@ function IndividualTraineeProfile() {
                     </div>
                 </center>
                 <div>
-
+                    {courses}
                 </div>
             </div>
         </div>

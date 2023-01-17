@@ -13,7 +13,7 @@ export default function CourseComponent(props) {
             <h5>Price: {props.Price}</h5>
             <center>
                 <Link to={`../Course/${props.Title}`}>
-                    <button>View Course Details</button>
+                    <button className ="searchbutton">View Course Details</button>
                 </Link>
             </center>
         </div>

@@ -66,25 +66,6 @@ function IndividualTraineeHome() {
 
     return (
         <div className="Page">
-            <div className="Header">
-                <img
-                    src={require("../ACL_Logo.png")}
-                    alt="Logo"
-                    width="315"
-                    height="100"
-                ></img>
-                <a href="/IndividualTraineeProfile">
-                    {" "}
-                    <img
-                        name="profilePic"
-                        src={require("../profile.png")}
-                        alt="Logo"
-                        width="120"
-                        height="70"
-                    ></img>
-                </a>
-            </div>
-
             <div className="Page">
                 <div className="Header">
                     <img
@@ -100,7 +81,7 @@ function IndividualTraineeHome() {
                             name="profilePic"
                             src={require("../profile.png")}
                             alt="Logo"
-                            width="120"
+                            width="110"
                             height="70"
                         ></img>
                     </a>
@@ -112,52 +93,52 @@ function IndividualTraineeHome() {
                             <u>Search</u>
                         </h1>
                         <h4 className="searchTitles">Title:</h4>
-                        <input
+                        <input id = "searchboxes"
                             type="text"
                             name="Title"
                             value={formData.Title}
                             onChange={handleChange}
                         />
                         <h4 className="searchTitles">Instructor:</h4>
-                        <input
+                        <input id = "searchboxes"
                             type="text"
                             name="Instructor"
                             value={formData.Instructor}
                             onChange={handleChange}
                         />
                         <h4 class="searchTitles">Rating:</h4>
-                        <input
+                        <input id = "searchboxes"
                             type="number"
                             name="Rating"
                             value={formData.Rating}
                             onChange={handleChange}
                         />
                         <h4 className="searchTitles">Subject:</h4>
-                        <input
+                        <input id = "searchboxes"
                             type="text"
                             name="Subject"
                             value={formData.Subject}
                             onChange={handleChange}
                         />
                         <h4 className="searchTitles">Price:</h4>
-                        <input
+                        <input id = "searchboxes"
                             type="number"
                             name="Price"
                             value={formData.Price}
                             onChange={handleChange}
                         />
-                        <br /> <button className ="searchbutton" formAction="post">Search</button>
+                        <br></br>
+                        <br /> <center><button className ="searchbutton" formAction="post">Search</button></center>
                     </form>
                 </div>
 
                 <div id="middle">
-                    <h1>All Courses: </h1>
-                    <div className="MiddlePanel">{courses}</div>
-
-
-                    <h1>My Courses: </h1>
-                </div>
+                <h1>{title}</h1>
+                <div className="MiddlePanel">{courses}</div>
+                <h1>Most Popular Courses:</h1>
+                <div className="MiddlePanel">{topCourses}</div>
             </div>
+                </div>
         </div>
     );
 }
