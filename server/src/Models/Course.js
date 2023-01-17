@@ -19,10 +19,6 @@ const courseSchema = new Schema(
             type: String,
             Required: true,
         },
-        Rating: {
-            type: Number,
-            required: true,
-        },
         Reviews: {
             type: Array,
         },
@@ -53,6 +49,17 @@ const courseSchema = new Schema(
         PreviewLink: {
             type: String,
         },
+        TotalRatings: {
+            type: Array,
+        },
+        Rating: {
+            type: Number,
+            required: true,
+        },
+        Problem: {
+            type: Array,
+        }
+
     },
     { timestamps: true }
 );

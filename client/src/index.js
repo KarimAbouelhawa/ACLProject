@@ -21,7 +21,8 @@ import InstructorHome from "./Pages/InstructorHome";
 import InstructorProfile from "./Pages/InstructorProfile";
 import InstructorEdit from "./Pages/InstructorEdit";
 import GuestHome from "./Pages/GuestHome";
-
+import PaymentRedirect from "./Pages/PaymentRedirect";
+import LessonPage from "./Pages/LessonPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -51,6 +52,8 @@ root.render(
                 <Route path="/InstructorEdit" element={<InstructorEdit />} />
                 <Route path="/GuestHome" element={<GuestHome />}/>
                 <Route path="/Course/:coursename" element={<Course />} />
+                <Route path="/PaymentRedirect" element={<PaymentRedirect />} />
+                <Route path="/Course/:coursename/:subtitlename" element={<LessonPage />} />
 
             </Routes>
         </Router>
