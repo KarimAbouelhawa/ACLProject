@@ -1,0 +1,41 @@
+#videoBox{
+    display: flex;
+    justify-content: space-around;
+
+}
+#lessoBox{
+    display: flex;
+    justify-content: space-around;
+
+}
+#previewTitle{
+    margin-left: 25%;
+}
+.paybuttons{
+    background-color: #1b5fde;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    justify-self: center;
+    border-radius: 12px;
+}
+.lessonbuttons{
+    background-color: #1b5fde;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    justify-self: center;
+    border-radius: 12px;
+}

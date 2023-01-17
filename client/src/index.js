@@ -21,7 +21,10 @@ import InstructorHome from "./Pages/InstructorHome";
 import InstructorProfile from "./Pages/InstructorProfile";
 import InstructorEdit from "./Pages/InstructorEdit";
 import GuestHome from "./Pages/GuestHome";
-
+import CreateCourse from "./Pages/CreateCourse";
+import AgreementContract from "./AgreementContract";
+import PaymentRedirect from "./Pages/PaymentRedirect";
+import LessonPage from "./Pages/LessonPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -40,18 +43,39 @@ root.render(
                     path="/CompanyRefundPolicy"
                     element={<CompanyRefundPolicy />}
                 />
-                <Route path="/IndividualTraineeProfile" element={<IndividualTraineeProfile />} />
-                <Route path="/IndividualTraineePayment" element={<IndividualTraineePayment />} />
-                <Route path="/IndividualTraineeChangePassword" element={<IndividualTraineeChangePassword />} />
+                <Route
+                    path="/IndividualTraineeProfile"
+                    element={<IndividualTraineeProfile />}
+                />
+                <Route
+                    path="/IndividualTraineePayment"
+                    element={<IndividualTraineePayment />}
+                />
+                <Route
+                    path="/IndividualTraineeChangePassword"
+                    element={<IndividualTraineeChangePassword />}
+                />
                 <Route path="/AdminHome" element={<AdminHome />} />
                 <Route path="/AdminAddUser" element={<AdminAddUser />} />
-                <Route path="/AdminHome/AdminSetPromotion" element={<AdminSetPromotion />} />
+                <Route
+                    path="/AdminHome/AdminSetPromotion"
+                    element={<AdminSetPromotion />}
+                />
                 <Route path="/InstructorHome" element={<InstructorHome />} />
-                <Route path="/InstructorProfile" element={<InstructorProfile />} />
+                <Route
+                    path="/InstructorProfile"
+                    element={<InstructorProfile />}
+                />
                 <Route path="/InstructorEdit" element={<InstructorEdit />} />
-                <Route path="/GuestHome" element={<GuestHome />}/>
+                <Route path="/CreateCourse" element={<CreateCourse />} />
+                <Route path="/GuestHome" element={<GuestHome />} />
                 <Route path="/Course/:coursename" element={<Course />} />
-
+                <Route
+                    path="/AgreementContract"
+                    element={<AgreementContract />}
+                />
+                <Route path="/PaymentRedirect" element={<PaymentRedirect />} />
+                <Route path="/Course/:coursename/:subtitlename" element={<LessonPage />} />
             </Routes>
         </Router>
     </CookiesProvider>

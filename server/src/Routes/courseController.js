@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Course = require("../Models/Course");
 const Subtitle = require("../Models/Subtitle");
+const { find } = require("../Models/User");
 
 //Requirement 7
 router.get("/", async (req, res) => {
@@ -60,19 +61,6 @@ router.post("/search/filter", async (req, res) => {
 });
 
 //req 34
-router.put("/:course/rateCourse", async (req, res) => {
-    const chosenCourse = await Course.findOne({ Title: req.params.course });
-    const newRating = (chosenCourse.SumRatings + req.body.Rating) / (chosenCourse.totalRatings + 1);
-    const newTotalRatings = chosenCourse.TotalRatings + 1;
-    const newSumRatings = chosenCourse.SumRatings + req.body.Rating;
-    await Course.updateOne(
-        { Title: req.body.Title },
-        { $set: { Rating: newRating } },
-        { $set: { TotalRatings: newTotalRatings } },
-        { $set: { newSumRatings: newSumRatings } }
-    );
-    res.status(200).send("Rating changed successfully");
-});
 
 // Requirement 24
 router.post("/:course/addSubtitleVideo", async (req, res) => {
@@ -107,4 +95,17 @@ router.put("/coursesDiscount", async (req, res) => {
     res.send("Discount added");
 });
 
+
+router.put("/rateCourse", async (req, res) => {
+     await Course.updateOne({Title : req.body.Title},
+         {$push: {TotalRatings : req.body.TotalRatings}})
+    res.send(200);
+})
+
+router.put("/reportProblem", async (req, res) => {
+    await Course.updateOne({Title : req.body.Title},
+        {$push: {Problem : req.body.Problem}})
+   res.send(200);
+})
 module.exports = router;
+
