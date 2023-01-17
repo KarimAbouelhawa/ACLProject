@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import "./Styles/IndividualTraineeHomeStyles.css";
 
@@ -40,6 +39,7 @@ async function handleSubmit(e){
 
         }
     }
+}
     return (
         <div id="paymentContainer">
             <div>
@@ -56,7 +56,6 @@ async function handleSubmit(e){
             <form onSubmit={handleSubmit}>
 
             <h4>First Name:</h4>
->
                 <input
                     type="text"
                     name="FirstName"
