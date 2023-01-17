@@ -1,0 +1,16 @@
+#paymentContainer {
+    outline-style: solid;
+    outline-color:black;
+    outline-width: medium;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    padding: 15px 32px;
+    background-color: blanchedalmond;
+}
+
+.exercise{
+    outline-style: solid;
+    padding: 15px 32px;
+}
