@@ -143,13 +143,14 @@ function IndividualTraineeHome() {
                             value={formData.Price}
                             onChange={handleChange}
                         />
-                        <br /> <button formAction="post">Search</button>
+                        <br /> <button className ="searchbutton" formAction="post">Search</button>
                     </form>
                 </div>
 
                 <div id="middle">
                     <h1>All Courses: </h1>
                     <div className="MiddlePanel">{courses}</div>
+
 
                     <h1>My Courses: </h1>
                 </div>

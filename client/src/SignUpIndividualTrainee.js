@@ -1,44 +1,63 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "./Styles/IndividualTraineeHomeStyles.css";
+
 
 
 function SignUpIndividualTrainee() {
 
-    const [formData, setFormData] = React.useState({
-        FirstName: "", LastName: "", Email: "", Password: "", Username: "", Country: "", Gender: "", Type: "Individual", companyrefund: false, websitepolicy: false, paymentpolicy: false
+    const navigate = useNavigate();
+const [formData, setFormData] = React.useState({
+    FirstName: "", LastName: "", Email: "", Password: "", Username: "", Country: "", Gender: "", Type:"Individual", companyrefund: false, websitepolicy: false, paymentpolicy: false
+})
+
+
+
+function handleChange(event){
+    const {name, value, type, checked} = event.target
+    setFormData(prevFormData => {
+        return {
+            ...prevFormData,
+            [name]: type === "checkbox" ? checked : value
+        }
     })
+}
 
-
-
-    function handleChange(event) {
-        const { name, value, type, checked } = event.target
-        setFormData(prevFormData => {
-            return {
-                ...prevFormData,
-                [name]: type === "checkbox" ? checked : value
-            }
-        })
-    }
-    console.log(formData)
-    async function handleSubmit(e) {
-        e.preventDefault();
+async function handleSubmit(e){
+    e.preventDefault();
+    console.log("data sent.")
+    if(formData.companyrefund && formData.paymentpolicy && formData.websitepolicy){
         try {
             const userData = await axios.post(
                 "http://localhost:8000/user/create",
                 formData
+                
             );
-
+            console.log("data sent successfully.")
+            navigate("/");
         } catch (error) {
 
         }
     }
     return (
-        <div>
-            <h1>Sign Up as an Individual Trainee</h1>
+        <div id="paymentContainer">
+            <div>
+            <center>
+                 <img
+                    src={require("./ACL_Logo.png")}
+                    alt="Logo"
+                    width="315"
+                    height="100"
+                ></img>
+                <u><h1>Sign Up as an Individual Trainee</h1></u>
+            </center>    
+            <br></br>
             <form onSubmit={handleSubmit}>
-                <h5>First Name:</h5>
+
+            <h4>First Name:</h4>
+>
                 <input
                     type="text"
                     name="FirstName"
@@ -46,7 +65,7 @@ function SignUpIndividualTrainee() {
                     onChange={handleChange}
                     value={formData.FirstName}
                 />
-                <h5>Last Name:</h5>
+            <h4>Last Name:</h4>
                 <input
                     type="text"
                     name="LastName"
@@ -54,7 +73,7 @@ function SignUpIndividualTrainee() {
                     onChange={handleChange}
                     value={formData.LastName}
                 />
-                <h5>Gender:</h5>
+            <h4>Gender:</h4>
                 <input
                     type="radio"
                     id="male"
@@ -63,7 +82,9 @@ function SignUpIndividualTrainee() {
                     checked={formData.Gender === "Male"}
                     onChange={handleChange}
                 />
-                <label htmlFor="male">Male</label><br></br>
+
+                <label htmlFor="male">Male</label>  
+
                 <input
                     type="radio"
                     id="female"
@@ -72,10 +93,12 @@ function SignUpIndividualTrainee() {
                     checked={formData.Gender === "Female"}
                     onChange={handleChange}
                 />
-                <label htmlFor="female">Female</label><br></br>
+
+                <label htmlFor="female">Female</label>
 
 
-                <h5>Email:</h5>
+
+            <h4>Email:</h4>
                 <input
                     type="text"
                     name="Email"
@@ -83,7 +106,7 @@ function SignUpIndividualTrainee() {
                     onChange={handleChange}
                     value={formData.Email}
                 />
-                <h5>Username:</h5>
+            <h4>Username:</h4>
                 <input
                     type="text"
                     name="Username"
@@ -91,7 +114,7 @@ function SignUpIndividualTrainee() {
                     onChange={handleChange}
                     value={formData.Username}
                 />
-                <h5>Password:</h5>
+            <h4>Password:</h4>
                 <input
                     type="password"
                     name="Password"
@@ -99,8 +122,10 @@ function SignUpIndividualTrainee() {
                     onChange={handleChange}
                     value={formData.Password}
                 />
-                <h5>Choose your Country:</h5>
+
+            <h4>Choose your Country:</h4>
                 <select id="country" name="Country" onChange={handleChange} value={formData.Country}>
+                    <option>--select your country--</option>
                     <option value="Australia">Australia</option>
                     <option value="Canada">Canada</option>
                     <option value="Egypt">Egypt</option>
@@ -120,7 +145,9 @@ function SignUpIndividualTrainee() {
                     <option value="United Kingdom">United Kingdom</option>
                     <option value="United States">United States</option>
                 </select>
-                <h4>Policy Agreements:</h4>
+
+            <h4>Policy Agreements:</h4>
+
                 <input
                     type="checkbox"
                     name="websitepolicy"
@@ -130,7 +157,8 @@ function SignUpIndividualTrainee() {
                 />
                 <label htmlFor="websitepolicy">
                     <a href="./WebsitePolicy" target="_blank" rel="noopener noreferrer">Website Policy</a>
-                </label><br></br>
+                </label><br/>
+
                 <input
                     type="checkbox"
                     name="companyrefund"
@@ -140,7 +168,7 @@ function SignUpIndividualTrainee() {
                 />
                 <label htmlFor="companyrefund">
                     <a href="./CompanyRefundPolicy" target="_blank" rel="noopener noreferrer">Company Refund Policy</a>
-                </label><br></br>
+                </label><br/>
 
                 <input
                     type="checkbox"
@@ -151,11 +179,22 @@ function SignUpIndividualTrainee() {
                 />
                 <label htmlFor="paymentpolicy">
                     <a href="./paymentPolicy" target="_blank" rel="noopener noreferrer">Payment Policy</a>
-                </label><br></br>
 
-                <button>Sign Up</button>
+                </label><br/>
+                <br/>
+                <br/>
+                <center>
+                        <button className="searchbutton">Sign Up</button>
+                </center>
+                <Link to ="/">
+                <center>
+                        <button className="cancelbutton">Back</button>
+                </center>
+                </Link>
+
             </form>
         </div>
+    </div>
     );
 }
 export default SignUpIndividualTrainee;

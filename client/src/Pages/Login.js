@@ -45,31 +45,52 @@ function Login() {
         <div id="loginContainer">
 
             <center>
-                <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
-                <h1>Login</h1>
+
+                <img
+                    src={require("../ACL_Logo.png")}
+                    alt="Logo"
+                    width="315"
+                    height="100"
+                ></img>
+                <u><h1>Login</h1></u>
+
                 <div>
                     <form onSubmit={handleSubmit}>
-                        <input
+                        <input id = "loginInputs"
                             type="text"
                             name="Username"
                             placeholder="Username"
                             value={formData.username}
                             onChange={handleChange}
-                        /><br></br>
-                        <input
+
+                        />
+                        <br></br>
+                        <br></br>
+
+                        <input id = "loginInputs"
                             type="password"
                             name="Password"
                             placeholder="Password"
-                            value={formData.password}
-                            onChange={handleChange} />
-                        <button formAction="post">Login</button>
-                        <Link to="./GuestPage">
-                            <button>Continue as guest</button>
+
+                            value={formData.Password}
+                            onChange={handleChange}
+                        />
+                        <br></br>
+                        <br></br>
+                        <button className="buttons" formAction="post">Login</button>
+                        <br></br>
+                        <Link to="./GuestHome">
+                            <button className="buttons">Continue as guest</button>
+                            <br></br>
+
                         </Link>
                         <Link to="./SignUp">
                             <button>Sign up</button>
                         </Link>
+                        <br></br>
+
                         <a href="">Forgotten password?</a>
+
                     </form>
                 </div>
             </center>

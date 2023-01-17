@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../Styles/IndividualTraineeHomeStyles.css";
+
 
 export default function CourseComponent(props) {
     return (

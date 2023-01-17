@@ -45,9 +45,11 @@ function IndividualTraineePayment() {
     return(
         <div>
         <div className="Header">
+        <a href="/IndividualTraineeHome">
                 <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
+        </a>   
                 <Link to="/IndividualTraineeProfile">
-                    <button class = "changepassword">Cancel</button>
+                    <button class = "cancel">Cancel</button>
                 </Link>
 
 
@@ -55,13 +57,13 @@ function IndividualTraineePayment() {
         <div>
         <center>
             <br></br>
-            <div id="loginContainer">
-                <h2>Payment Details</h2><br></br>
+            <div id="paymentContainer">
+                <u><h2>Payment Details</h2><br></br></u>
 
                 <form onSubmit={handleSubmit}>
                 <div className="inputDetails">
                 <h4>Card Holder's Name: </h4>
-                <input
+                <input id ="paymentinputs"
                     type="text"
                     name="CardName"
                     placeholder="name on card"
@@ -71,7 +73,7 @@ function IndividualTraineePayment() {
                 </div>
                 <div className="inputDetails">
                 <h4>Card Number: </h4>
-                <input
+                <input  id ="paymentinputs"
                     type="text"
                     name="CardNumber"
                     placeholder="number on card"
@@ -81,7 +83,7 @@ function IndividualTraineePayment() {
                 </div>
                 <div className="inputDetails">
                 <h4>CVV: </h4>
-                <input
+                <input  id ="paymentinputs"
                     type="text"
                     name="CardCVV"
                     placeholder="last 3 digits of the card's back"
@@ -90,7 +92,7 @@ function IndividualTraineePayment() {
                 />
                 </div>
                 <br></br>
-                <button formAction="post">Save</button>
+                <button class = "changepassword" formAction="post">Save</button>
                 </form>
                 
             </div>
