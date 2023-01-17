@@ -13,6 +13,7 @@ import IndividualTraineeHome from "./Pages/IndividualTraineeHome";
 import IndividualTraineeProfile from "./Pages/IndividualTraineeProfile";
 import IndividualTraineePayment from "./Pages/IndividualTraineePayment";
 import IndividualTraineeChangePassword from "./Pages/IndividualTraineeChangePassword";
+import Course from "./Pages/Course";
 import AdminHome from "./Pages/AdminHome";
 import AdminAddUser from "./Pages/AdminAddUser";
 import AdminSetPromotion from "./Pages/AdminSetPromotion";
@@ -49,6 +50,8 @@ root.render(
                 <Route path="/InstructorProfile" element={<InstructorProfile />} />
                 <Route path="/InstructorEdit" element={<InstructorEdit />} />
                 <Route path="/GuestHome" element={<GuestHome />}/>
+                <Route path="/Course/:coursename" element={<Course />} />
+
             </Routes>
         </Router>
     </CookiesProvider>

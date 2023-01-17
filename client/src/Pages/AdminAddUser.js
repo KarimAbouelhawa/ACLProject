@@ -50,7 +50,6 @@ function AdminAddUser() {
                     value={formData.LastName}
                 />
                 <h5>Gender:</h5>
-
                 <input
                     type="radio"
                     id="male"

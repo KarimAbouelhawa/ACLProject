@@ -2,22 +2,22 @@ import React from "react";
 import "../Styles/AdminSetPromotion.css";
 import axios from "axios";
 import { BrowserRouter, Link, useNavigate } from 'react-router-dom'
-//import AdminCoursesComponent from "../Components/AdminCoursesComponent";
+import AdminCoursesComponent from "../Components/AdminCoursesComponent";
 
 function AdminSetPromotion() {
-    // const [courses, setCourses] = React.useState([]);
+    const [courses, setCourses] = React.useState([]);
 
-    // React.useEffect(() => {
-    //     async function getCourses() {
-    //         const res = await axios.get("http://localhost:8000/course/");
-    //         const courses = res.data;
-    //         const adminCoursesComponent = courses.map(course => (
-    //             <AdminCoursesComponent {...course} />
-    //         ));
-    //         setCourses(adminCoursesComponent);
-    //     }
-    //     getCourses();
-    // }, []);
+    React.useEffect(() => {
+        async function getCourses() {
+            const res = await axios.get("http://localhost:8000/course/");
+            const courses = res.data;
+            const adminCoursesComponent = courses.map(course => (
+                <AdminCoursesComponent {...course} />
+            ));
+            setCourses(adminCoursesComponent);
+        }
+        getCourses();
+    }, []);
 
 
 
@@ -28,9 +28,12 @@ function AdminSetPromotion() {
                 <a href="/AdminProfile"> <img name="profilePic" src={require("../profile.png")} alt="Logo" width="120" height="70"></img></a>
             </div>
 
-            {/* <div className="middlePanel">
+            <div className="middlePanel">
+
                 {courses}
-            </div> */}
+
+            </div>
+
         </div>
     );
 }

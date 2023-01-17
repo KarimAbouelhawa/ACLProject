@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import "./Styles/IndividualTraineeHomeStyles.css";
 
 
 function SignUpIndividualTrainee() {
+
     const navigate = useNavigate();
 const [formData, setFormData] = React.useState({
     FirstName: "", LastName: "", Email: "", Password: "", Username: "", Country: "", Gender: "", Type:"Individual", companyrefund: false, websitepolicy: false, paymentpolicy: false
@@ -35,8 +37,8 @@ async function handleSubmit(e){
             console.log("data sent successfully.")
             navigate("/");
         } catch (error) {
-                    }
 
+        }
     }
     return (
         <div id="paymentContainer">
@@ -52,7 +54,9 @@ async function handleSubmit(e){
             </center>    
             <br></br>
             <form onSubmit={handleSubmit}>
+
             <h4>First Name:</h4>
+>
                 <input
                     type="text"
                     name="FirstName"
@@ -77,7 +81,9 @@ async function handleSubmit(e){
                     checked={formData.Gender === "Male"}
                     onChange={handleChange}
                 />
+
                 <label htmlFor="male">Male</label>  
+
                 <input
                     type="radio"
                     id="female"
@@ -88,6 +94,7 @@ async function handleSubmit(e){
                 />
 
                 <label htmlFor="female">Female</label>
+
 
             <h4>Email:</h4>
                 <input
@@ -136,7 +143,9 @@ async function handleSubmit(e){
                     <option value="United Kingdom">United Kingdom</option>
                     <option value="United States">United States</option>
                 </select>
+
             <h4>Policy Agreements:</h4>
+
                 <input
                     type="checkbox"
                     name="websitepolicy"
@@ -168,6 +177,7 @@ async function handleSubmit(e){
                 />
                 <label htmlFor="paymentpolicy">
                     <a href="./paymentPolicy" target="_blank" rel="noopener noreferrer">Payment Policy</a>
+
                 </label><br/>
                 <br/>
                 <br/>
@@ -179,6 +189,7 @@ async function handleSubmit(e){
                         <button className="cancelbutton">Back</button>
                 </center>
                 </Link>
+
             </form>
         </div>
     </div>

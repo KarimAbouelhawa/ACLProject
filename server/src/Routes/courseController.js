@@ -76,6 +76,7 @@ router.post("/:course/addSubtitleVideo", async (req, res) => {
             VideoDescription: req.body.VideoDescription,
         },
     });
+    res.send(200);
 });
 
 // Requirement 25

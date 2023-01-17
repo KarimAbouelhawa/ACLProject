@@ -8,6 +8,7 @@ import axios from "axios";
 
 
 function IndividualTraineeProfile() {
+
     const [courses, setCourses] = React.useState([]);
     const [cookies, setCookie] = useCookies(["user"]);
 
@@ -45,10 +46,11 @@ function IndividualTraineeProfile() {
             <center>
                 <div id="profileContainer">
                     <br></br>
+
                     <img name = "profilePic" src={require("../profileBlack.png")} alt="Logo" width="250" height="250"></img>
                     <h1>{cookies.user.Username}</h1>
                     <Link to="/IndividualTraineePayment">
-                        <button className = "paymentdetails">Payment Details</button>
+                        <button className="paymentdetails">Payment Details</button>
                     </Link>
                     <h3>My Wallet:</h3>
                     <h2>0</h2>
@@ -59,9 +61,8 @@ function IndividualTraineeProfile() {
                 </div>
             </center>
             <div>
-                {courses}
+
             </div>
-        </div>
         </div>
     );
 }
