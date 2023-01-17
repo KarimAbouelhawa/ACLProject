@@ -1,0 +1,10 @@
+.LeftPanel {
+    height: 1000px;
+    width: 20%;
+    background-color: rgb(51, 51, 51);
+    padding: 0 5px;
+}
+
+#genderPos {
+    margin-left: 20px;
+}

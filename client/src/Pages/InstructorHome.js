@@ -4,7 +4,7 @@ import { Cookies, useCookies } from "react-cookie";
 import CourseComponent from "../Components/CourseComponent";
 import "../Styles/IndividualTraineeHomeStyles.css";
 
-function IndividualTraineeHome() {
+function InstructorHome() {
     const [title, setTitle] = useState("All Courses");
     const [courses, setCourses] = React.useState([]);
     const [topCourses, setTopCourses] = React.useState([]);
@@ -72,7 +72,7 @@ function IndividualTraineeHome() {
                     width="315"
                     height="100"
                 ></img>
-                <a href="/IndividualTraineeProfile">
+                <a href="/InstructorProfile">
                     {" "}
                     <img
                         name="profilePic"
@@ -137,4 +137,4 @@ function IndividualTraineeHome() {
         </div>
     );
 }
-export default IndividualTraineeHome;
+export default InstructorHome;
