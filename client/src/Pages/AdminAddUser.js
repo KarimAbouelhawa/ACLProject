@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import "../Styles/AdminHomeStyle.css";
 function AdminAddUser() {
 
     const [formData, setFormData] = React.useState({

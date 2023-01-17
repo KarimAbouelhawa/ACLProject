@@ -39,6 +39,9 @@ function IndividualTraineeHome() {
         }
     }
 
+
+    console.log(cookies.user.Username);
+
     React.useEffect(() => {
         async function getCourses() {
             const res = await axios.get("http://localhost:8000/course/");

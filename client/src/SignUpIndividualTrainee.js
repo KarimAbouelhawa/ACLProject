@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Styles/IndividualTraineeHomeStyles.css";
 
 
-
 function SignUpIndividualTrainee() {
 
     const navigate = useNavigate();
@@ -95,7 +94,6 @@ async function handleSubmit(e){
                 />
 
                 <label htmlFor="female">Female</label>
-
 
 
             <h4>Email:</h4>
