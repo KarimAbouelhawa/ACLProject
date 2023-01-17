@@ -53,10 +53,10 @@ function IndividualTraineeProfile() {
                     <button className="changepassword">Change Password</button>
                 </Link>
             </div>
-        <div>
-            <center>
-                <div id="profileContainer">
-                    <br></br>
+            <div>
+                <center>
+                    <div id="profileContainer">
+                        <br></br>
 
                     <img name = "profilePic" src={require("../profileBlack.png")} alt="Logo" width="250" height="250"></img>
                     <h1>{cookies.user.Username}</h1>
@@ -68,7 +68,7 @@ function IndividualTraineeProfile() {
                     <br></br>
                 </div>
                 <div>
-                    <h1>My Courses:</h1>
+                    {courses}
                 </div>
             </center>
             <div>

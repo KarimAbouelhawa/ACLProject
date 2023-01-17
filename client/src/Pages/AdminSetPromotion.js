@@ -3,6 +3,7 @@ import "../Styles/AdminSetPromotion.css";
 import axios from "axios";
 import { BrowserRouter, Link, useNavigate } from 'react-router-dom'
 import AdminCoursesComponent from "../Components/AdminCoursesComponent";
+import { Cookies, useCookies } from "react-cookie";
 
 function AdminSetPromotion() {
     const [courses, setCourses] = React.useState([]);
@@ -19,7 +20,17 @@ function AdminSetPromotion() {
         getCourses();
     }, []);
 
-
+    React.useEffect(() => {
+        async function setDiscount() {
+            const res = await axios.put("http://localhost:8000/course/courseDiscount");
+            const courses = res.data;
+            // const adminCoursesComponent = courses.map(course => (
+            //     <AdminCoursesComponent {...course} />
+            // ));
+            //setCourses(adminCoursesComponent);
+        }
+        setDiscount();
+    }, []);
 
     return (
         <div>
@@ -29,9 +40,7 @@ function AdminSetPromotion() {
             </div>
 
             <div className="middlePanel">
-
                 {courses}
-
             </div>
 
         </div>
