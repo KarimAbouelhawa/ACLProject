@@ -9,15 +9,14 @@ import CompanyRefundPolicy from "./CompanyRefundPolicy";
 import "./Styles/index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
-//import SignUp from "./Pages/SignUp";
 import IndividualTraineeHome from "./Pages/IndividualTraineeHome";
 import IndividualTraineeProfile from "./Pages/IndividualTraineeProfile";
 import IndividualTraineePayment from "./Pages/IndividualTraineePayment";
 import IndividualTraineeChangePassword from "./Pages/IndividualTraineeChangePassword";
 import Course from "./Pages/Course";
-
-//import Page2 from "./page2"
-//import Login2 from "./Pages/Login2";
+import AdminHome from "./Pages/AdminHome";
+import AdminAddUser from "./Pages/AdminAddUser";
+import AdminSetPromotion from "./Pages/AdminSetPromotion";
 //import history from "./history"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -49,7 +48,6 @@ root.render(
                     path="/IndividualTraineeChangePassword"
                     element={<IndividualTraineeChangePassword />}
                 />
-                <Route path="/Course/:coursename" element={<Course />} />
             </Routes>
         </Router>
     </CookiesProvider>

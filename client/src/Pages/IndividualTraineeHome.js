@@ -82,55 +82,69 @@ function IndividualTraineeHome() {
                 </a>
             </div>
 
-            <div className="LeftPanel">
-                <form onSubmit={handleSubmit}>
-                    <h1 id="text1">
-                        <u>Search</u>
-                    </h1>
-                    <h4 className="searchTitles">Title:</h4>
-                    <input
-                        type="text"
-                        name="Title"
-                        value={formData.Title}
-                        onChange={handleChange}
-                    />
-                    <h4 className="searchTitles">Instructor:</h4>
-                    <input
-                        type="text"
-                        name="Instructor"
-                        value={formData.Instructor}
-                        onChange={handleChange}
-                    />
-                    <h4 class="searchTitles">Rating:</h4>
-                    <input
-                        type="number"
-                        name="Rating"
-                        value={formData.Rating}
-                        onChange={handleChange}
-                    />
-                    <h4 className="searchTitles">Subject:</h4>
-                    <input
-                        type="text"
-                        name="Subject"
-                        value={formData.Subject}
-                        onChange={handleChange}
-                    />
-                    <h4 className="searchTitles">Price:</h4>
-                    <input
-                        type="number"
-                        name="Price"
-                        value={formData.Price}
-                        onChange={handleChange}
-                    />
-                    <br /> <button formAction="post">Search</button>
-                </form>
-            </div>
+                <div className="Page">
+                    <div className="Header">
+                        <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
 
-            <div id="middle">
-                <h1>{title}</h1>
-                <div className="MiddlePanel">{courses}</div>
-                <h1>Most Popular Courses:</h1>
-                <div className="MiddlePanel">{topCourses}</div>
+                        <a href="/IndividualTraineeProfile"> <img name="profilePic" src={require("../profile.png")} alt="Logo" width="120" height="70"></img></a>
+
+                    </div>
+
+                    <div className="LeftPanel">
+                        <form onSubmit={handleSubmit}>
+                            <h1 id="text1">
+                                <u>Search</u>
+                            </h1>
+                            <h4 className="searchTitles">Title:</h4>
+                            <input
+                                type="text"
+                                name="Title"
+                                value={formData.Title}
+                                onChange={handleChange}
+                            />
+                            <h4 className="searchTitles">Instructor:</h4>
+                            <input
+                                type="text"
+                                name="Instructor"
+                                value={formData.Instructor}
+                                onChange={handleChange}
+                            />
+                            <h4 class="searchTitles">Rating:</h4>
+                            <input
+                                type="number"
+                                name="Rating"
+                                value={formData.Rating}
+                                onChange={handleChange}
+                            />
+                            <h4 className="searchTitles">Subject:</h4>
+                            <input
+                                type="text"
+                                name="Subject"
+                                value={formData.Subject}
+                                onChange={handleChange}
+                            />
+                            <h4 className="searchTitles">Price:</h4>
+                            <input
+                                type="number"
+                                name="Price"
+                                value={formData.Price}
+                                onChange={handleChange}
+                            />
+                            <br /> <button formAction="post">Search</button>
+                        </form>
+                    </div>
+
+                    <div id="middle">
+                        <h1>All Courses: </h1>
+                        <div className="MiddlePanel">
+
+                            {courses}
+
+                        </div>
+
+                        <h1>My Courses: </h1>
+                    </div>
+                </div>
             </div>
         </div>
     );
