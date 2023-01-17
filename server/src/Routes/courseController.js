@@ -91,8 +91,14 @@ router.post("/:course/addPreview", async (req, res) => {
 
 router.put("/rateCourse", async (req, res) => {
      await Course.updateOne({Title : req.body.Title},
-         {$push: {TotalRatings : req.body.Rating}})
+         {$push: {TotalRatings : req.body.TotalRatings}})
     res.send(200);
+})
+
+router.put("/reportProblem", async (req, res) => {
+    await Course.updateOne({Title : req.body.Title},
+        {$push: {Problem : req.body.Problem}})
+   res.send(200);
 })
 
 module.exports = router;
