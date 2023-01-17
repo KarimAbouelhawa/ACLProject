@@ -43,9 +43,11 @@ function IndividualTraineeChangePassword() {
     return(
     <div>
         <div className="Header">
+        <a href="/IndividualTraineeHome">
                 <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
+        </a>   
                 <Link to="/IndividualTraineeProfile">
-                    <button class = "changepassword">Cancel</button>
+                    <button class = "cancel">Cancel</button>
                 </Link>
 
 
@@ -53,12 +55,12 @@ function IndividualTraineeChangePassword() {
         <div>
         <center>
             <br></br>
-            <div id="loginContainer">
+            <div id="paymentContainer">
                 <h2>Change Password</h2><br></br>
                 <form onSubmit={handleSubmit}>
                 <div className="inputDetails">
                 <h4>New Password:  </h4>
-                <input
+                <input id="paymentinputs"
                     type="password"
                     name="Password"
                     placeholder="new password"
@@ -68,7 +70,7 @@ function IndividualTraineeChangePassword() {
                 </div>
                 <div className="inputDetails">
                 <h4>Confirm Password:  </h4>
-                <input
+                <input id ="paymentinputs"
                     type="password"
                     name="ConfirmPassword"
                     placeholder="confirm password"
@@ -77,7 +79,7 @@ function IndividualTraineeChangePassword() {
                 />
                 </div>
                 <br></br>
-                <button formAction="post">Save</button>
+                <button className="changepassword" formAction="post">Save</button>
                 </form>
                 
             </div>

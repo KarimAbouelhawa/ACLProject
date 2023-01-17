@@ -1,4 +1,5 @@
 import React from "react";
+import "../Styles/IndividualTraineeHomeStyles.css";
 
 export default function CourseComponent(props){
 
@@ -9,7 +10,7 @@ export default function CourseComponent(props){
             <h5>Rating: {props.Rating}</h5>
             <h5>Subject: {props.Subject}</h5>
             <h5>Price: {props.Price}</h5>
-            <center><button>View Course Details</button></center>
+            <center><button className ="viewbutton">View Course Details</button></center>
     </div>   
     )
 }

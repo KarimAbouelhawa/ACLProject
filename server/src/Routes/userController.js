@@ -161,4 +161,9 @@ router.post("/changePass", async (req, res) => {
     }
 });
 
+router.get("/:user/userCourses", async(req, res) => {
+    const courses = await User.findOne({ Username: req.params.user });
+    res.send(courses.Courses);
+})
+
 module.exports = router;
