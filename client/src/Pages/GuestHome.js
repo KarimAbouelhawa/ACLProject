@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Cookies, useCookies } from "react-cookie";
+import "../Styles/IndividualTraineeProfileStyle.css";
 import CourseComponent from "../Components/CourseComponent";
-import "../Styles/IndividualTraineeHomeStyles.css";
+import { Link } from "react-router-dom";
 
-function IndividualTraineeHome() {
+
+function GuestHome() {
     const [title, setTitle] = useState("All Courses");
     const [courses, setCourses] = React.useState([]);
     const [topCourses, setTopCourses] = React.useState([]);
@@ -39,7 +41,7 @@ function IndividualTraineeHome() {
         }
     }
 
-    console.log(cookies.user.Username);
+    console.log(cookies.user.Username)
 
     React.useEffect(() => {
         async function getCourses() {
@@ -72,17 +74,13 @@ function IndividualTraineeHome() {
                     width="315"
                     height="100"
                 ></img>
-                <a href="/IndividualTraineeProfile">
-                    {" "}
-                    <img
-                        name="profilePic"
-                        src={require("../profile.png")}
-                        alt="Logo"
-                        width="120"
-                        height="70"
-                    ></img>
-                </a>
-            </div>
+                <Link to="../SignUp">
+                <button className="topbutton">Sign Up</button>
+                </Link>
+                <Link to="../">
+                <button className="searchbutton">Login</button>
+                </Link>
+           </div>
 
             <div className="LeftPanel">
                 <form onSubmit={handleSubmit} className="traineeForm">
@@ -137,4 +135,4 @@ function IndividualTraineeHome() {
         </div>
     );
 }
-export default IndividualTraineeHome;
+export default GuestHome;

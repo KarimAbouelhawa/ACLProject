@@ -13,6 +13,7 @@
     outline-width: medium;
     outline-offset: 5px;
     margin-left: 32px;
+    background-color: #cccab7
 }
 .Header {
     height: 125px;
@@ -24,7 +25,7 @@
     justify-content: space-between;
 }
 .LeftPanel{
-    height: 1200px;
+    height: 1400px;
     width: 20%;
     background-color: #333;
     padding: 0 5px;
@@ -51,4 +52,69 @@
     display: grid;
     background-color: #cccab7;
     flex-grow: 1;
+}
+.searchboxes{
+    width:250px
+}
+.searchbutton{
+    background-color: #6495ed;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    justify-self: center;
+    border-radius: 12px;
+}
+
+.traineeForm{
+    display: flex;
+    justify-content: self ;
+    flex-direction: column;
+}
+.viewbutton{
+    background-color: #6495ed;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    justify-self: center;
+    border-radius: 12px;
+}
+.cancelbutton{
+    background-color: #943636;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    justify-self: center;
+    border-radius: 12px;
+}
+.topbutton{
+    background-color: #6495ed;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 950px;
+    cursor: pointer;
+    justify-self: center;
+    border-radius: 12px;
 }

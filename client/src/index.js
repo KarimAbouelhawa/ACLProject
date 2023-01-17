@@ -9,7 +9,6 @@ import CompanyRefundPolicy from "./CompanyRefundPolicy";
 import "./Styles/index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
-//import SignUp from "./Pages/SignUp";
 import IndividualTraineeHome from "./Pages/IndividualTraineeHome";
 import IndividualTraineeProfile from "./Pages/IndividualTraineeProfile";
 import IndividualTraineePayment from "./Pages/IndividualTraineePayment";
@@ -20,10 +19,8 @@ import AdminSetPromotion from "./Pages/AdminSetPromotion";
 import InstructorHome from "./Pages/InstructorHome";
 import InstructorProfile from "./Pages/InstructorProfile";
 import InstructorEdit from "./Pages/InstructorEdit";
+import GuestHome from "./Pages/GuestHome";
 
-//import Page2 from "./page2"
-//import Login2 from "./Pages/Login2";
-//import history from "./history"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -51,7 +48,7 @@ root.render(
                 <Route path="/InstructorHome" element={<InstructorHome />} />
                 <Route path="/InstructorProfile" element={<InstructorProfile />} />
                 <Route path="/InstructorEdit" element={<InstructorEdit />} />
-
+                <Route path="/GuestHome" element={<GuestHome />}/>
             </Routes>
         </Router>
     </CookiesProvider>
