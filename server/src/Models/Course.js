@@ -23,6 +23,12 @@ const courseSchema = new Schema(
             type: Number,
             required: true,
         },
+        TotalRatings: {
+            type: Number,
+        },
+        SumRatings: {
+            type: Number,
+        },
         Reviews: {
             type: Array,
         },

@@ -11,8 +11,6 @@ function SignUpIndividualTrainee() {
         FirstName: "", LastName: "", Email: "", Password: "", Username: "", Country: "", Gender: "", Type: "Individual", companyrefund: false, websitepolicy: false, paymentpolicy: false
     })
 
-
-
     function handleChange(event) {
         const { name, value, type, checked } = event.target
         setFormData(prevFormData => {
@@ -188,7 +186,6 @@ function SignUpIndividualTrainee() {
                             <button className="cancelbutton">Back</button>
                         </center>
                     </Link>
-
                 </form>
             </div>
         </div>

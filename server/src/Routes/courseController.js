@@ -61,9 +61,15 @@ router.post("/search/filter", async (req, res) => {
 
 //req 34
 router.put("/:course/rateCourse", async (req, res) => {
+    const chosenCourse = await Course.findOne({ Title: req.params.course });
+    const newRating = (chosenCourse.SumRatings + req.body.Rating) / (chosenCourse.totalRatings + 1);
+    const newTotalRatings = chosenCourse.TotalRatings + 1;
+    const newSumRatings = chosenCourse.SumRatings + req.body.Rating;
     await Course.updateOne(
         { Title: req.body.Title },
-        { $set: { Rating: req.body.Rating } }
+        { $set: { Rating: newRating } },
+        { $set: { TotalRatings: newTotalRatings } },
+        { $set: { newSumRatings: newSumRatings } }
     );
     res.status(200).send("Rating changed successfully");
 });
@@ -86,6 +92,19 @@ router.post("/:course/addPreview", async (req, res) => {
         { $set: { PreviewLink: req.body.PreviewLink } }
     );
     res.send(200);
+});
+
+router.put("/coursesDiscount", async (req, res) => {
+    const chosenCourse = await Course.findOne({ Title: req.body.Title });
+    console.log(chosenCourse)
+    const newPrice = chosenCourse.Price - (chosenCourse.Price * (req.body.Discount / 100));
+    console.log(chosenCourse)
+    const x = await Course.updateOne(
+        { Title: req.body.Title },
+        { $set: { Discount: req.body.Discount, Price: newPrice } },
+    );
+    console.log(x)
+    res.send("Discount added");
 });
 
 module.exports = router;

@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 const User = require("../Models/User");
 const Exercise = require("../Models/Exercise");
+const Course = require("../Models/Course");
 
 router.use(cors());
 
@@ -109,11 +110,18 @@ router.post("/changePass", async (req, res) => {
         res.status(200).send("Password changed successfully");
     }
 });
+
 //req 33 NOT TESTED PROPERLY
-router.post("/:user/rateInstructor", async (req, res) => {
+router.put("/:username/rateInstructor", async (req, res) => {
+    const chosenInstructor = await User.find({ Username: req.params.Username });
+    const newRating = (chosenInstructor.SumRatings + req.body.Rating) / (chosenInstructor.TotalRatings + 1);
+    const newTotalRatings = chosenInstructor.TotalRatings + 1;
+    const newSumRatings = chosenInstructor.SumRatings + req.body.Rating;
     await User.updateOne(
-        { Username: req.body.Username },
-        { $set: { Rating: req.body.Rating } }
+        { Username: req.params.username },
+        { $set: { Rating: newRating } },
+        { $set: { TotalRatings: newTotalRatings } },
+        { $set: { newSumRatings: newSumRatings } }
     );
     // res.send(await User.find({Username: req.params.user}))
     res.status(200).send("Rating changed successfully");
@@ -161,17 +169,9 @@ router.post("/changePass", async (req, res) => {
     }
 });
 
-
-router.put("/coursesDiscount", async (req, res) => {
-    //const courses= await Course.find({Instructor: req.body.instructor});
-    await Course.updateOne({ Title: req.body.Title }, { $set: { Discount: req.body.Discount } });
-    res.send("Discount added");
-});
-
-router.get("/:user/userCourses", async(req, res) => {
+router.get("/:user/userCourses", async (req, res) => {
     const courses = await User.findOne({ Username: req.params.user });
     res.send(courses.Courses);
 })
-
 
 module.exports = router;
