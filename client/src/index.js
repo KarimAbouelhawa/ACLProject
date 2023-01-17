@@ -25,6 +25,7 @@ import CreateCourse from "./Pages/CreateCourse";
 import AgreementContract from "./AgreementContract";
 import PaymentRedirect from "./Pages/PaymentRedirect";
 import LessonPage from "./Pages/LessonPage";
+import CourseExercise from "./Pages/CourseExercise";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -75,7 +76,14 @@ root.render(
                     element={<AgreementContract />}
                 />
                 <Route path="/PaymentRedirect" element={<PaymentRedirect />} />
-                <Route path="/Course/:coursename/:subtitlename" element={<LessonPage />} />
+                <Route
+                    path="/Course/:coursename/:subtitlename"
+                    element={<LessonPage />}
+                />
+                <Route
+                    path="/:coursename/CourseExercise"
+                    element={<CourseExercise />}
+                />
             </Routes>
         </Router>
     </CookiesProvider>
