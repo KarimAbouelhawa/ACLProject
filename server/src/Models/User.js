@@ -36,16 +36,22 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-Courses: {
+  Courses: {
     type: Array,
   },
-  Rating:{
+  Rating: {
     type: Number,
   },
-  Biography:{
+  TotalRatings: {
+    type: Number,
+  },
+  SumRatings: {
+    type: Number,
+  },
+  Biography: {
     type: String,
   },
-  Reviews:{
+  Reviews: {
     type: Array,
   },
   CardName: {

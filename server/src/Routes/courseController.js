@@ -61,13 +61,6 @@ router.post("/search/filter", async (req, res) => {
 });
 
 //req 34
-// router.put("/:course/rateCourse", async (req, res) => {
-//     await Course.updateOne(
-//         { Title: req.body.Title },
-//         { $set: { Rating: req.body.Rating } }
-//     );
-//     res.status(200).send("Rating changed successfully");
-// });
 
 // Requirement 24
 router.post("/:course/addSubtitleVideo", async (req, res) => {
@@ -89,10 +82,30 @@ router.post("/:course/addPreview", async (req, res) => {
     res.send(200);
 });
 
+router.put("/coursesDiscount", async (req, res) => {
+    const chosenCourse = await Course.findOne({ Title: req.body.Title });
+    console.log(chosenCourse)
+    const newPrice = chosenCourse.Price - (chosenCourse.Price * (req.body.Discount / 100));
+    console.log(chosenCourse)
+    const x = await Course.updateOne(
+        { Title: req.body.Title },
+        { $set: { Discount: req.body.Discount, Price: newPrice } },
+    );
+    console.log(x)
+    res.send("Discount added");
+});
+
+
 router.put("/rateCourse", async (req, res) => {
      await Course.updateOne({Title : req.body.Title},
-         {$push: {TotalRatings : req.body.Rating}})
+         {$push: {TotalRatings : req.body.TotalRatings}})
     res.send(200);
 })
 
+router.put("/reportProblem", async (req, res) => {
+    await Course.updateOne({Title : req.body.Title},
+        {$push: {Problem : req.body.Problem}})
+   res.send(200);
+})
 module.exports = router;
+

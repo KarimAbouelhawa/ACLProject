@@ -14,6 +14,70 @@ function LessonPage() {
     const [hasCourse, setHasCourse] = useState(false)
 
     const thisCourse = course.Title;
+
+    const [formData, setFormData] = React.useState({
+    TotalRatings: "", Title: course.Title,
+    })
+
+    const [formData2, setFormData2] = React.useState({
+        Problem: "", Title: course.Title,
+})
+
+
+
+function handleChange(event){
+    const {name, value, type, checked} = event.target
+    setFormData(prevFormData => {
+        return {
+            ...prevFormData,
+            [name]: type === "checkbox" ? checked : value
+        }
+    })
+    console.log(formData)
+}
+
+function handleChange2(event){
+    const {name, value, type, checked} = event.target
+    setFormData2(prevFormData => {
+        return {
+            ...prevFormData,
+            [name]: type === "checkbox" ? checked : value
+        }
+    })
+    console.log(formData2)
+}
+
+async function handleSubmit(e){
+    e.preventDefault();
+    console.log(course.Title)
+    formData.Title = course.Title;
+        try {
+            await axios.put(
+                "http://localhost:8000/course/rateCourse",
+                formData
+            );
+            console.log("data sent successfully.")
+            console.log(formData)
+        } catch (error) {
+
+        }
+}
+
+async function handleSubmit2(e){
+    e.preventDefault();
+    formData2.Title = course.Title;
+        try {
+            await axios.put(
+                "http://localhost:8000/course/reportProblem",
+                formData2
+            );
+            console.log("data sent successfully.")
+            console.log(formData2)
+        } catch (error) {
+
+        }
+}
+
     React.useEffect(() => {
         async function checkCourses(){
         
@@ -72,9 +136,9 @@ function LessonPage() {
                 <img src={require("../ACL_Logo.png")} alt="Logo" width="315" height="100"></img>
             </a>  
 
-         <form>
+         <form onSubmit={handleSubmit2}>
             <label for="bugs">Report a bug::</label>
-                <select id="cars" name="cars">
+                <select id="cars" name="Problem" onChange={handleChange2} value={formData2.Problem}>
                     <option>--select a bug--</option>
                     <option value="technical">Technical</option>
                     <option value="financial">Financial</option>
@@ -99,9 +163,9 @@ function LessonPage() {
                 <h3>Price: {course.Price}</h3>
             </div>
             <div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <label for="course">Rate Course:</label>
-                        <select id="rateC" name="rateC">
+                        <select id="rateC" name="TotalRatings" onChange={handleChange} value={formData.TotalRatings}>
                             <option>-- select a rating out of 5 --</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
