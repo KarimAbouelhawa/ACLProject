@@ -75,7 +75,10 @@ function GuestHome() {
                     height="100"
                 ></img>
                 <Link to="../SignUp">
-                <button className="searchbutton">Sign Up</button>
+                <button className="topbutton">Sign Up</button>
+                </Link>
+                <Link to="../">
+                <button className="searchbutton">Login</button>
                 </Link>
            </div>
 
