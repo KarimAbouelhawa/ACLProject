@@ -4,7 +4,7 @@ import { Cookies, useCookies } from "react-cookie";
 import CourseComponent from "../Components/CourseComponent";
 import "../Styles/IndividualTraineeHomeStyles.css";
 
-function IndividualTraineeHome() {
+function InstructorHome() {
     const [title, setTitle] = useState("All Courses");
     const [courses, setCourses] = React.useState([]);
     const [topCourses, setTopCourses] = React.useState([]);
@@ -72,7 +72,7 @@ function IndividualTraineeHome() {
                     width="315"
                     height="100"
                 ></img>
-                <a href="/IndividualTraineeProfile">
+                <a href="/InstructorProfile">
                     {" "}
                     <img
                         name="profilePic"
@@ -85,46 +85,46 @@ function IndividualTraineeHome() {
             </div>
 
             <div className="LeftPanel">
-                <form onSubmit={handleSubmit} className="traineeForm">
+                <form onSubmit={handleSubmit}>
                     <h1 id="text1">
                         <u>Search</u>
                     </h1>
                     <h4 className="searchTitles">Title:</h4>
-                    <input className="searchboxes"
+                    <input
                         type="text"
                         name="Title"
                         value={formData.Title}
                         onChange={handleChange}
                     />
                     <h4 className="searchTitles">Instructor:</h4>
-                    <input className="searchboxes"
+                    <input
                         type="text"
                         name="Instructor"
                         value={formData.Instructor}
                         onChange={handleChange}
                     />
                     <h4 class="searchTitles">Rating:</h4>
-                    <input className="searchboxes"
+                    <input
                         type="number"
                         name="Rating"
                         value={formData.Rating}
                         onChange={handleChange}
                     />
                     <h4 className="searchTitles">Subject:</h4>
-                    <input className="searchboxes"
+                    <input
                         type="text"
                         name="Subject"
                         value={formData.Subject}
                         onChange={handleChange}
                     />
                     <h4 className="searchTitles">Price:</h4>
-                    <input className="searchboxes"
+                    <input
                         type="number"
                         name="Price"
                         value={formData.Price}
                         onChange={handleChange}
                     />
-                    <br /> <button className ="searchbutton" formAction="post">Search</button>
+                    <br /> <button formAction="post">Search</button>
                 </form>
             </div>
 
@@ -137,4 +137,4 @@ function IndividualTraineeHome() {
         </div>
     );
 }
-export default IndividualTraineeHome;
+export default InstructorHome;

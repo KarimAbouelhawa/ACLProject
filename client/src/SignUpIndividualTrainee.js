@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Styles/IndividualTraineeHomeStyles.css";
 
-    
+
 function SignUpIndividualTrainee() {
     const navigate = useNavigate();
 const [formData, setFormData] = React.useState({
@@ -35,11 +35,9 @@ async function handleSubmit(e){
             console.log("data sent successfully.")
             navigate("/");
         } catch (error) {
-            
-        }
-    }
+                    }
 
-}
+    }
     return (
         <div id="paymentContainer">
             <div>
@@ -73,23 +71,23 @@ async function handleSubmit(e){
             <h4>Gender:</h4>
                 <input
                     type="radio"
-                    id= "male"
+                    id="male"
                     name="Gender"
-                    value= "Male"
-                    checked = {formData.Gender === "Male"}
+                    value="Male"
+                    checked={formData.Gender === "Male"}
                     onChange={handleChange}
                 />
                 <label htmlFor="male">Male</label>  
                 <input
                     type="radio"
-                    id= "female"
+                    id="female"
                     name="Gender"
-                    value= "Female"
-                    checked = {formData.Gender === "Female"}
+                    value="Female"
+                    checked={formData.Gender === "Female"}
                     onChange={handleChange}
                 />
-                <label htmlFor="female">Female</label>
 
+                <label htmlFor="female">Female</label>
 
             <h4>Email:</h4>
                 <input
@@ -115,6 +113,7 @@ async function handleSubmit(e){
                     onChange={handleChange}
                     value={formData.Password}
                 />
+
             <h4>Choose your Country:</h4>
                 <select id="country" name="Country" onChange={handleChange} value={formData.Country}>
                     <option>--select your country--</option>

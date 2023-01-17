@@ -97,22 +97,6 @@ router.put("/:username/changeCountry", async (req, res) => {
     res.status(200).send("Country Updated");
 });
 
-router.put("/:username/addCardDetails", async(req,res) => {
-    await User.updateOne(
-        {Username: req.params.username},
-        {$set: {CardName: req.body.CardName}}
-    )
-    await User.updateOne(
-        {Username: req.params.username},
-        {$set: {CardNumber: req.body.CardNumber}}
-    )
-    await User.updateOne(
-        {Username: req.params.username},
-        {$set: {CardCVV: req.body.CardCVV}}
-    )
-    res.status(200).send("Card Updated");
-})
-
 router.post("/changePass", async (req, res) => {
     const userDetails = await User.findOne({ Username: req.body.Username });
     if (userDetails.Password === req.body.Password) {
@@ -136,17 +120,33 @@ router.post("/:user/rateInstructor", async (req, res) => {
 });
 
 // Requirements 29 NOT TESTED PROPERLY
-router.put("/:user/edit", async (req, res) => {
+router.put("/:username/edit", async (req, res) => {
     await User.updateOne(
-        { Username: req.body.Username },
+        { Username: req.params.username },
         { $set: { Biography: req.body.Biography } }
     );
     await User.updateOne(
-        { Username: req.body.Username },
+        { Username: req.params.username },
         { $set: { Email: req.body.Email } }
     );
-    res.send("Biography and/or email updated successfully");
+    res.status(200).send("Email/Biography changed successfully");
 });
+
+router.put("/:username/addCardDetails", async (req, res) => {
+    await User.updateOne(
+        { Username: req.params.username },
+        { $set: { CardName: req.body.CardName } }
+    )
+    await User.updateOne(
+        { Username: req.params.username },
+        { $set: { CardNumber: req.body.CardNumber } }
+    )
+    await User.updateOne(
+        { Username: req.params.username },
+        { $set: { CardCVV: req.body.CardCVV } }
+    )
+    res.status(200).send("Card Updated");
+})
 
 router.post("/changePass", async (req, res) => {
     const userDetails = await User.findOne({ Username: req.body.Username });
