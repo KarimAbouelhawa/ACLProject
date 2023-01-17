@@ -25,7 +25,7 @@
     justify-content: space-between;
 }
 .LeftPanel{
-    height: 1400px;
+    height: 1500px;
     width: 20%;
     background-color: #333;
     padding: 0 5px;
@@ -53,7 +53,7 @@
     background-color: #cccab7;
     flex-grow: 1;
 }
-.searchboxes{
+#searchboxes{
     width:250px
 }
 .searchbutton{

@@ -85,8 +85,9 @@ function Login() {
 
                         </Link>
                         <Link to="./SignUp">
-                            <button>Sign up</button>
+                            <button className="buttons">Sign up</button>
                         </Link>
+                        <br></br>
                         <br></br>
 
                         <a href="">Forgotten password?</a>
