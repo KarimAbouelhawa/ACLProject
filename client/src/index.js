@@ -48,6 +48,7 @@ root.render(
                     path="/IndividualTraineeChangePassword"
                     element={<IndividualTraineeChangePassword />}
                 />
+                <Route path="/Course/:coursename" element={<Course />} />
             </Routes>
         </Router>
     </CookiesProvider>
